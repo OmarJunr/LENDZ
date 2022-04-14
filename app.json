@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "lendz",
+    "slug": "lendz",
+    "version": "1.0.0",
+    "orientation": "portrait",
+
+    "splash": {
+
+      "resizeMode": "contain",
+      "backgroundColor": "#2a6f97"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
