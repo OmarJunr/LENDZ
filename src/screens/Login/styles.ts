@@ -1,55 +1,65 @@
 import { StyleSheet } from 'react-native';
 import { theme } from '../../global/styles/theme';
+import { getStatusBarHeight } from "react-native-iphone-x-helper";
 
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
+
+    },
+    cabecalho: {
+        width: '100%',
+        height: '15%',
+        marginTop: getStatusBarHeight(),
+        flexDirection: 'row',
+        marginLeft: 20,
         alignItems: 'center',
+
+    },
+    image: {
+        width: 100,
+        height: 100,
+        marginLeft: 100,
+    },
+    form: {
+        height: '100%',
+        width: '100%',
+        paddingTop: 50,
+        paddingBottom: 50,
+        marginTop: 80,
         backgroundColor: theme.colors.white,
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
-
-    },
-    form: {
-        width: '100%',
         alignItems: 'center',
-        bottom: 20,
-        marginTop: -10
+        position:'relative',
+        
     },
     label: {
-        marginTop: 25,
         fontSize: 18,
         fontFamily: theme.fonts.title700,
         color: '#246796',
+        textAlign: 'center',
+        marginHorizontal: 20
     },
-    labelPass: {
-        marginTop: 25,
-        fontSize: 18,
-        fontFamily: theme.fonts.title700,
-        color: '#246796',
-        bottom: 50
-    },
-    teste:{
-        width: '70%',
+    password: {
+        textAlign: 'center',
         height: 56,
-        borderRadius: 30,
-        backgroundColor: theme.colors.white,
         flexDirection: 'row',
-        alignItems: 'center'
-    },
-    image: {
-        width: '30%',
-        height: 110,
-
     },
     title: {
         color: theme.colors.heading,
         textAlign: 'center',
         fontSize: 40,
         fontFamily: theme.fonts.title700,
-        marginTop: 15,
 
     },
-
+    TitleBox: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        marginBottom:30
+    },
+    scroll:{
+        bottom:-30
+    }
 });

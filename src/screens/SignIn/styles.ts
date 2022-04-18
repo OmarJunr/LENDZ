@@ -12,7 +12,6 @@ export const styles = StyleSheet.create({
     image: {
         width: '30%',
         height: 110,
-
     },
     title: {
         color: theme.colors.heading,
@@ -20,7 +19,6 @@ export const styles = StyleSheet.create({
         fontSize: 40,
         fontFamily: theme.fonts.title700,
         marginTop: 15,
-
     },
     buttons: {
         justifyContent: 'center',
@@ -31,21 +29,4 @@ export const styles = StyleSheet.create({
         position: 'relative',
         bottom: -13
     },
-    buttonEntry:{
-        width: '70%',
-        height: 56,
-        borderRadius: 30,
-        backgroundColor: theme.colors.white,
-        flexDirection: 'row',
-        alignItems: 'center'
-    },
-    titleButton:{
-        flex: 1,
-        color: theme.colors.primary,
-        fontSize: 15,
-        fontFamily: theme.fonts.title700,
-        textAlign: 'center'
-    }
-
-
 });

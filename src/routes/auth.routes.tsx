@@ -3,9 +3,8 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 import { SignIn } from '../screens/SignIn';
 import { Cadastro } from '../screens/Cadastro';
-// import { Login } from '../screens/Login';
-
-// import { Passworld } from "../screens/Passworld";
+import { Login } from '../screens/Login';
+import { Password } from "../screens/Password";
 
 import { theme } from '../global/styles/theme';
 
@@ -29,16 +28,16 @@ export function AuthRoutes() {
                 name="Cadastro"
                 component={Cadastro}
             />
-    
-              {/* <Screen
-                name="Passworld"
-                component={Passworld}
-            /> */}
-                {/* <Screen
+
+            <Screen
+                name="Password"
+                component={Password}
+            />
+            <Screen
                 name="Login"
                 component={Login}
-            /> */}
-         
+            />
+
         </Navigator>
 
     )

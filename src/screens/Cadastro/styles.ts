@@ -13,7 +13,6 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         marginLeft: 20,
         alignItems: 'center',
-
     },
     image: {
         width: 100,
@@ -21,9 +20,9 @@ export const styles = StyleSheet.create({
         marginLeft: 100,
     },
     form: {
-flex:1,
+        flex: 1,
         height: '100%',
-        marginTop: 10,
+        marginTop: 20,
         backgroundColor: theme.colors.white,
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
@@ -34,11 +33,17 @@ flex:1,
         marginBottom: 25,
         fontSize: 18,
         fontFamily: theme.fonts.title700,
-        color: '#246796'
+        color: '#246796',
+        textAlign: 'center',
+        marginHorizontal: 20
     },
-    scroll:{
-       position:'relative',
-       bottom:-13
-    }
-
+    scroll: {
+        bottom:-20
+    },
+    TitleBox: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        marginVertical:10
+    },
 });
