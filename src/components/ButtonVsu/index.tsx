@@ -5,13 +5,13 @@ import { styles } from './styles';
 import { useNavigation } from "@react-navigation/native";
 
 
-export function ButtonPassword() {
+export function ButtonVsu() {
 
     const navigation = useNavigation()
 
     function HandlePassworld() {
         //@ts-ignore
-        navigation.navigate("Password");
+        navigation.navigate("VerifyVsu");
     }
 
     return (
@@ -20,7 +20,7 @@ export function ButtonPassword() {
             onPress={HandlePassworld}
         >
             <Text style={styles.title}>
-              VERIFICAR
+               Esqueceu a senha?
             </Text>
         </RectButton>
     )

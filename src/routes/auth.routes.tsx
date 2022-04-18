@@ -5,6 +5,7 @@ import { SignIn } from '../screens/SignIn';
 import { Cadastro } from '../screens/Cadastro';
 import { Login } from '../screens/Login';
 import { Password } from "../screens/Password";
+import { VerifyVsu } from "../screens/VerifyVsu";
 
 import { theme } from '../global/styles/theme';
 
@@ -36,6 +37,10 @@ export function AuthRoutes() {
             <Screen
                 name="Login"
                 component={Login}
+            />
+            <Screen
+                name="VerifyVsu"
+                component={VerifyVsu}
             />
 
         </Navigator>

@@ -5,19 +5,16 @@ export const styles = StyleSheet.create({
     container: {
         width: '70%',
         height: 56,
-        backgroundColor: theme.colors.primary,
         borderRadius: 30,
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop:40,
-        marginBottom:40
+        bottom:30
     },
     title: {
         flex: 1,
-        color: theme.colors.white,
-        fontSize: 15,
+        color: theme.colors.primary,
+        fontSize: 18,
         fontFamily: theme.fonts.title700,
         textAlign: 'center'
     }
-
 });

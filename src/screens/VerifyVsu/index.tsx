@@ -1,28 +1,26 @@
 import React from "react";
 
 import {
-    View, Text, ScrollView, KeyboardAvoidingView, Platform, Image
+    View, Text, ScrollView, KeyboardAvoidingView, Platform, Image, Pressable
 } from 'react-native';
 
 import { styles } from './styles';
 import { useNavigation } from "@react-navigation/native";
 import { Lines } from '../../components/Lines';
 import { AntDesign } from '@expo/vector-icons'
-import { InputsText } from "../../components/InputsText";
-import { InputsPassword } from "../../components/InputsPassword";
-import { Button } from "../../components/Button";
 import IllustrationImg from '../../assets/illustration.png';
 import { theme } from '../../global/styles/theme';
-import { ButtonPassword } from "../../components/ButtonPassword";
+import { Button } from "../../components/Button";
+import { SmallInput } from "../../components/SmallInput";
 import { ButtonVsu } from "../../components/ButtonVsu";
+import { ButtonPassword } from "../../components/ButtonPassword";
 
-export function Login() {
+export function VerifyVsu() {
     const navigation = useNavigation()
 
-
-    function handleSignIn() {
+    function handleLogin() {
         //@ts-ignore
-        navigation.navigate("SignIn");
+        navigation.navigate("Login");
     }
 
     return (
@@ -30,39 +28,65 @@ export function Login() {
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
             style={styles.container}>
             <ScrollView style={styles.scroll}>
-                
+
                 <View style={styles.cabecalho}>
                     <AntDesign
                         name="arrowleft"
                         color={theme.colors.heading}
                         size={30}
-                        onPress={handleSignIn}
+                        onPress={handleLogin}
                     />
                     <Image
                         source={IllustrationImg}
                         style={styles.image} resizeMode="stretch"
                     />
-
                 </View>
                 <Text style={styles.title}>
                     LENDZ
                 </Text>
 
                 <View style={styles.form}>
+
                     <View style={styles.TitleBox}>
                         <Lines />
                         <Text style={styles.label}>
-                            ENTRAR
+                            VSU VERIFICAÇÃO
                         </Text>
                         <Lines />
                     </View>
 
-                    <InputsText title="Usuario" placeholder="Digite Seu usuario" />
-                    <InputsPassword title="Senha" placeholder="Digite Sua Senha" />
-                    <Button title="Entrar" />
-                    <ButtonVsu />
-                </View>
+                    <Text>
+                        VSU FOI ENVIADO PARA (000) 0 0000-0000
+                    </Text>
 
+                    <View style={styles.field}>
+                        <View>
+
+                            <View style={styles.column}>
+                                <SmallInput maxLength={2} />
+
+                                <SmallInput maxLength={2} />
+
+                                <SmallInput maxLength={2} />
+
+                                <SmallInput maxLength={2} />
+                            </View>
+                        </View>
+
+                    </View>
+                    <ButtonPassword />
+                    <View style={[{ flexDirection: 'row' }]}>
+                        <Text style={[{ marginRight: 10, color: '#a7a7a7' }]}>
+                            00:30
+                        </Text>
+                        <Pressable>
+                            <Text>
+                                Reenviar VSU
+                            </Text>
+                        </Pressable>
+                    </View>
+
+                </View>
             </ScrollView>
         </KeyboardAvoidingView>
 

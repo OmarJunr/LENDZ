@@ -26,41 +26,47 @@ export const styles = StyleSheet.create({
         width: '100%',
         paddingTop: 50,
         paddingBottom: 50,
-        marginTop: 80,
+        marginTop: 150,
         backgroundColor: theme.colors.white,
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
         alignItems: 'center',
-        position:'relative',
-        
+        position: 'relative',
+
     },
     label: {
         fontSize: 18,
         fontFamily: theme.fonts.title700,
         color: '#246796',
         textAlign: 'center',
-        marginHorizontal: 20
+        marginHorizontal: 30
     },
-    password: {
-        textAlign: 'center',
-        height: 56,
-        flexDirection: 'row',
-    },
+
     title: {
         color: theme.colors.heading,
         textAlign: 'center',
         fontSize: 40,
         fontFamily: theme.fonts.title700,
-
     },
     TitleBox: {
-        width:'80%',
+        width: '80%',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-around',
-        marginBottom:30
+        marginBottom: 30
     },
-    scroll:{
-        bottom:-30
-    }
+    scroll: {
+        bottom: -30
+    },
+    field: {
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        marginTop: 30,
+        marginBottom:20
+    },
+    column: {
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
 });
