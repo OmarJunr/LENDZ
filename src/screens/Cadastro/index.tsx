@@ -19,11 +19,13 @@ import { InputsEmail } from "../../components/InputsEmail";
 import { InputsNumeric } from "../../components/InputsNumeric";
 import { InputsPassword } from "../../components/InputsPassword";
 import { InputsText } from "../../components/InputsText";
+import { Lines } from "../../components/Lines";
 
 export function Cadastro() {
     const navigation = useNavigation()
 
     function handleSignIn() {
+        //@ts-ignore
         navigation.navigate("SignIn");
     }
 
@@ -46,19 +48,25 @@ export function Cadastro() {
                     />
                 </View>
                 <View style={styles.form}>
-                    <Text style={styles.label}>
-                        CADASTRO
-                    </Text>
-                    <InputsText  title="Nome Completo" placeholder="Digite Seu Nome Aqui"/>
-                    <InputsEmail title="E-mail" placeholder="Digite Seu E-mail Aqui"/>
-                    <InputsNumeric title="Celular" placeholder="Digite Seu Celular Aqui"/>
-                    <InputsPassword title="Senha" placeholder="Senha"/>
-                    <InputsPassword title="Confirme sua Senha" placeholder="Confirme sua Senha"/>
+
+                    <View style={styles.teste}>
+                        <Lines />
+                        <Text style={styles.label}>
+                            CADASTRO
+                        </Text>
+                        <Lines />
+                    </View>
+
+                    <InputsText title="Nome Completo" placeholder="Digite Seu Nome Aqui" />
+                    <InputsEmail title="E-mail" placeholder="Digite Seu E-mail Aqui" />
+                    <InputsNumeric title="Celular" placeholder="Digite Seu Celular Aqui" />
+                    <InputsPassword title="Senha" placeholder="Senha" />
+                    <InputsPassword title="Confirme sua Senha" placeholder="Confirme sua Senha" />
                     <Button
                         title="Cadastre-se"
                     />
                 </View>
-               
+
             </ScrollView>
         </KeyboardAvoidingView>
 

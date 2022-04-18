@@ -1,25 +1,27 @@
 import React from "react";
 import { RectButton, RectButtonProps } from "react-native-gesture-handler";
-import { Text, Image, View, } from 'react-native';
+import { Text} from 'react-native';
 
 import { styles } from './styles';
 import { useNavigation } from "@react-navigation/native";
 
-export function ButtonCadastro() {
+
+export function ButtonPassword() {
+
     const navigation = useNavigation()
 
-    function handleCadastro() {
+    function HandlePassworld() {
         //@ts-ignore
-        navigation.navigate("Cadastro");
+        navigation.navigate("Password");
     }
 
     return (
         <RectButton
             style={styles.container}
-            onPress={handleCadastro}
+            onPress={HandlePassworld}
         >
             <Text style={styles.title}>
-                CADASTRE-SE
+               Esqueceu a Senha?
             </Text>
         </RectButton>
     )

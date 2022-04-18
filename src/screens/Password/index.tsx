@@ -8,12 +8,13 @@ import { styles } from './styles';
 import { useNavigation } from "@react-navigation/native";
 import IllustrationImg from '../../assets/illustration.png';
 
-export function Passworld() {
+export function Password() {
     const navigation = useNavigation()
 
     return (
+     
         <View style={styles.container}>
-            <Image
+               <Image
                 source={IllustrationImg}
                 style={styles.image} resizeMode="stretch"
             />

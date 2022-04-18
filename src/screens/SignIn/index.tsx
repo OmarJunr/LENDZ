@@ -7,18 +7,10 @@ import {
 import IllustrationImg from '../../assets/illustration.png';
 import { Background } from '../../components/Background';
 import { styles } from './styles';
-import { useNavigation } from "@react-navigation/native";
 import { ButtonCadastro } from "../../components/ButtonCadastro";
-
-import { RectButton } from "react-native-gesture-handler";
+import { ButtonEntry } from "../../components/ButtonEntry";
 
 export function SignIn() {
-    const navigation = useNavigation()
-
-    function handleEntrar() {
-        navigation.navigate("Login");
-    }
-
     return (
         <Background>
             <View style={styles.container}>
@@ -32,14 +24,7 @@ export function SignIn() {
 
             </View >
             <View style={styles.buttons}>
-                <RectButton
-                    style={styles.buttonEntry}
-                    onPress={handleEntrar}
-                >
-                    <Text style={styles.titleButton}>
-                        ENTRAR
-                    </Text>
-                </RectButton>
+                <ButtonEntry />
                 <ButtonCadastro />
             </View>
         </Background>
