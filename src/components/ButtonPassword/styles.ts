@@ -9,7 +9,6 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         bottom:30
-
     },
     title: {
         flex: 1,
@@ -18,5 +17,4 @@ export const styles = StyleSheet.create({
         fontFamily: theme.fonts.title700,
         textAlign: 'center'
     }
-
 });

@@ -53,7 +53,7 @@ export const styles = StyleSheet.create({
         fontFamily: theme.fonts.title700,
 
     },
-    teste: {
+    TitleBox: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-around',

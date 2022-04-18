@@ -12,7 +12,6 @@ export const styles = StyleSheet.create({
     image: {
         width: '30%',
         height: 110,
-
     },
     title: {
         color: theme.colors.heading,
@@ -20,7 +19,6 @@ export const styles = StyleSheet.create({
         fontSize: 40,
         fontFamily: theme.fonts.title700,
         marginTop: 15,
-
     },
     buttons: {
         justifyContent: 'center',

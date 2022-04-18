@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-import { RectButton, RectButtonProps } from "react-native-gesture-handler";
-import { Text, Modal } from 'react-native';
-import { ModelView } from "../ModelView";
+import React from "react";
+import { RectButton } from "react-native-gesture-handler";
+import { Text } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
 import { styles } from './styles';
 
@@ -15,7 +14,6 @@ export function ButtonEntry() {
     }
 
     return (
-
         <RectButton
             style={styles.container}
             onPress={handleLogin}

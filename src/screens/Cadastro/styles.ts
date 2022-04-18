@@ -13,7 +13,6 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         marginLeft: 20,
         alignItems: 'center',
-
     },
     image: {
         width: 100,
@@ -40,14 +39,11 @@ export const styles = StyleSheet.create({
     },
     scroll: {
         bottom:-20
-
     },
-    teste: {
+    TitleBox: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-around',
         marginVertical:10
     },
-
-
 });

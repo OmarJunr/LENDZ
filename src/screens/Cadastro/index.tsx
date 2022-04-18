@@ -49,7 +49,7 @@ export function Cadastro() {
                 </View>
                 <View style={styles.form}>
 
-                    <View style={styles.teste}>
+                    <View style={styles.TitleBox}>
                         <Lines />
                         <Text style={styles.label}>
                             CADASTRO

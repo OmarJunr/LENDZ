@@ -1,7 +1,6 @@
 import React from "react";
-import { RectButton, RectButtonProps } from "react-native-gesture-handler";
+import { RectButton } from "react-native-gesture-handler";
 import { Text} from 'react-native';
-
 import { styles } from './styles';
 import { useNavigation } from "@react-navigation/native";
 

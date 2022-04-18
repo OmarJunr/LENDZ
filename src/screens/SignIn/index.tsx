@@ -13,6 +13,7 @@ import { ButtonEntry } from "../../components/ButtonEntry";
 export function SignIn() {
     return (
         <Background>
+            
             <View style={styles.container}>
                 <Image
                     source={IllustrationImg}
@@ -21,12 +22,13 @@ export function SignIn() {
                 <Text style={styles.title}>
                     LENDZ
                 </Text>
-
             </View >
+
             <View style={styles.buttons}>
                 <ButtonEntry />
                 <ButtonCadastro />
             </View>
+
         </Background>
 
     );
