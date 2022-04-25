@@ -27,6 +27,5 @@ export function SignIn() {
                 <ButtonCadastro />
             </View>
         </Background>
-
     );
 }

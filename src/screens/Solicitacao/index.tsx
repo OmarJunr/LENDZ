@@ -11,7 +11,6 @@ import { useNavigation } from "@react-navigation/native";
 export function Solicitacao() {
     const navigation = useNavigation()
 
-
     function handlePrincipal() {
         //@ts-ignore
         navigation.navigate("Principal");
@@ -45,9 +44,7 @@ export function Solicitacao() {
                         VOLTAR PARA TELA PRINCIPAL
                     </Text>
                 </Pressable>
-
             </View>
         </View>
-
     )
 }
