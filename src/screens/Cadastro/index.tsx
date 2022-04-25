@@ -31,10 +31,9 @@ export function Cadastro() {
 
     return (
 
-        <KeyboardAvoidingView
-            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-            style={styles.container}>
-            <ScrollView style={styles.scroll}>
+        <Background>
+            <ScrollView style={styles.container}>
+
                 <View style={styles.cabecalho}>
                     <AntDesign
                         name="arrowleft"
@@ -68,7 +67,6 @@ export function Cadastro() {
                 </View>
 
             </ScrollView>
-        </KeyboardAvoidingView>
-
+        </Background>
     );
 }

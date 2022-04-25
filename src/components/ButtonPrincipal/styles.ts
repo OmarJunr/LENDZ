@@ -5,9 +5,12 @@ export const styles = StyleSheet.create({
     container: {
         width: '70%',
         height: 56,
+        backgroundColor: theme.colors.primary,
         borderRadius: 30,
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop:40,
+        marginBottom:40
     },
     title: {
         flex: 1,
