@@ -20,9 +20,8 @@ export const styles = StyleSheet.create({
         marginLeft: 100,
     },
     form: {
-        flex: 1,
         height: '100%',
-        marginTop: 20,
+        marginTop: '10%',
         backgroundColor: theme.colors.white,
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
@@ -33,17 +32,15 @@ export const styles = StyleSheet.create({
         marginBottom: 25,
         fontSize: 18,
         fontFamily: theme.fonts.title700,
-        color: '#246796',
+        color: theme.colors.primary,
         textAlign: 'center',
         marginHorizontal: 20
     },
-    scroll: {
-        bottom:-20
-    },
+
     TitleBox: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-around',
-        marginVertical:10
+        marginVertical: 10
     },
 });

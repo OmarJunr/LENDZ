@@ -6,7 +6,7 @@ import { Cadastro } from '../screens/Cadastro';
 import { Login } from '../screens/Login';
 import { Password } from "../screens/Password";
 import { VerifyVsu } from "../screens/VerifyVsu";
-
+import { Principal } from "../screens/Principal";
 import { theme } from '../global/styles/theme';
 
 const { Navigator, Screen } = createStackNavigator();
@@ -21,6 +21,7 @@ export function AuthRoutes() {
                 }
             }}
         >
+
             <Screen
                 name="SignIn"
                 component={SignIn}
@@ -42,7 +43,10 @@ export function AuthRoutes() {
                 name="VerifyVsu"
                 component={VerifyVsu}
             />
-
+            <Screen
+                name="Principal"
+                component={Principal}
+            />
         </Navigator>
 
     )

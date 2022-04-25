@@ -13,8 +13,9 @@ import { InputsPassword } from "../../components/InputsPassword";
 import { Button } from "../../components/Button";
 import IllustrationImg from '../../assets/illustration.png';
 import { theme } from '../../global/styles/theme';
-import { ButtonPassword } from "../../components/ButtonPassword";
 import { ButtonVsu } from "../../components/ButtonVsu";
+import { Background } from "../../components/Background";
+import { ButtonPrincipal } from "../../components/ButtonPrincipal";
 
 export function Login() {
     const navigation = useNavigation()
@@ -26,45 +27,43 @@ export function Login() {
     }
 
     return (
-        <KeyboardAvoidingView
-            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-            style={styles.container}>
-            <ScrollView style={styles.scroll}>
-                
-                <View style={styles.cabecalho}>
-                    <AntDesign
-                        name="arrowleft"
-                        color={theme.colors.heading}
-                        size={30}
-                        onPress={handleSignIn}
-                    />
-                    <Image
-                        source={IllustrationImg}
-                        style={styles.image} resizeMode="stretch"
-                    />
+        <Background>
+            <ScrollView >
+                <View style={styles.container}>
+                    <View style={styles.cabecalho}>
+                        <AntDesign
+                            name="arrowleft"
+                            color={theme.colors.heading}
+                            size={30}
+                            onPress={handleSignIn}
+                        />
+                        <Image
+                            source={IllustrationImg}
+                            style={styles.image} resizeMode="stretch"
+                        />
 
-                </View>
-                <Text style={styles.title}>
-                    LENDZ
-                </Text>
-
-                <View style={styles.form}>
-                    <View style={styles.TitleBox}>
-                        <Lines />
-                        <Text style={styles.label}>
-                            ENTRAR
-                        </Text>
-                        <Lines />
                     </View>
+                    <Text style={styles.title}>
+                        LENDZ
+                    </Text>
 
-                    <InputsText title="Usuario" placeholder="Digite Seu usuario" />
-                    <InputsPassword title="Senha" placeholder="Digite Sua Senha" />
-                    <Button title="Entrar" />
-                    <ButtonVsu />
+                    <View style={styles.form}>
+                        <View style={styles.TitleBox}>
+                            <Lines />
+                            <Text style={styles.label}>
+                                ENTRAR
+                            </Text>
+                            <Lines />
+                        </View>
+
+                        <InputsText title="Usuario" placeholder="Digite Seu usuario" />
+                        <InputsPassword title="Senha" placeholder="Digite Sua Senha" />
+                        <ButtonPrincipal />
+                        <ButtonVsu />
+                    </View>
                 </View>
-
             </ScrollView>
-        </KeyboardAvoidingView>
+        </Background>
 
     );
 }

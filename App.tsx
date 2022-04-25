@@ -19,14 +19,14 @@ export default function App() {
     return <AppLoading />;
   }
   return (
-    <Background>
+    <>
       <StatusBar
         barStyle="light-content"
         backgroundColor="transparent"
         translucent
       />
       <Routes />
-      </Background>
+      </>
   );
 
 }

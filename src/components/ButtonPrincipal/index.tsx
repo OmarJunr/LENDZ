@@ -4,12 +4,9 @@ import { Text } from 'react-native';
 import { styles } from './styles';
 import { useNavigation } from "@react-navigation/native";
 
-type Props = {
-    title: string;
-    local?: string
-}
 
-export function Button({ title, local, ...rest }: Props) {
+
+export function ButtonPrincipal() {
     const navigation = useNavigation()
 
     function Principal() {
@@ -22,11 +19,10 @@ export function Button({ title, local, ...rest }: Props) {
     return (
         <RectButton
             style={styles.container}
-            onPress={local ? Principal : teste}
-            {...rest}
+            onPress={Principal}
         >
             <Text style={styles.title}>
-                {title}
+                Entrar
             </Text>
         </RectButton>
 

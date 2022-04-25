@@ -4,10 +4,12 @@ import { View, Modal, Text, Pressable, ModalProps } from 'react-native';
 
 import { styles } from './styles';
 
-export function Lines() {
+type Props = {
+    tam?: string
+}
 
+export function Lines({ tam }: Props) {
     return (
-        <View style={styles.container} />
+        <View style={[styles.container, { width: tam ? tam : '30%' }]} />
     )
-
 }
