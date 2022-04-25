@@ -22,12 +22,10 @@ export function SignIn() {
                     LENDZ
                 </Text>
             </View >
-
             <View style={styles.buttons}>
                 <ButtonEntry />
                 <ButtonCadastro />
             </View>
         </Background>
-
     );
 }
