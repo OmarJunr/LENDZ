@@ -56,7 +56,7 @@ export function AuthRoutes() {
             />
             <Screen
                 name="ProductDetail"
-                component={ProductDetail} />
+                component={UserProfile} />
             <Screen
                 name="User"
                 component={UserProfile} />
