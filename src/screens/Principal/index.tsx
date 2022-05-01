@@ -11,11 +11,14 @@ import { styles } from "./styles";
 import { CategorySelect } from "../../components/CategorySelect";
 import { RequestSelect } from "../../components/RequestSelect";
 import { FiltersSelect } from "../../components/FiltersSelect";
+import { useNavigation } from "@react-navigation/native";
 
 export function Principal() {
     const [category, setCategory] = useState('')
     const [request, setRequest] = useState('')
     const [filter, setFilter] = useState('')
+    const navigation = useNavigation()
+
     return (
 
         <Background>
@@ -56,6 +59,11 @@ export function Principal() {
                         <CategorySelect
                             setCategory={setCategory}
                             categorySelected={category}
+                            onClick={(categoryId) => {
+                                    //@ts-ignore
+                                    navigation.navigate("ProductDetail")
+                                }
+                            }
                         />
                     </View>
                     <Itens />
