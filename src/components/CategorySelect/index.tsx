@@ -8,9 +8,10 @@ import { Feather } from '@expo/vector-icons';
 type Props = {
     categorySelected: string;
     setCategory: (categoryId: string) => void;
+    onClick: (categoryId: string) => void;
 }
 
-export function CategorySelect({ categorySelected, setCategory, }: Props) {
+export function CategorySelect({ categorySelected, setCategory, onClick}: Props) {
     return (
         <>
             <ScrollView
@@ -22,7 +23,10 @@ export function CategorySelect({ categorySelected, setCategory, }: Props) {
                 {
                     categories.map((category, i) => (
                         <RectButton key={i}
-                            onPress={() => setCategory(category.id)}
+                            onPress={() => {
+                                setCategory(category.id)
+                                onClick(category.id)
+                            }}
                         >
                             <View
                                 style={[styles.interno, category.id === categorySelected ? styles.checked : styles.check]}
