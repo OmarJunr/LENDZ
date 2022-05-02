@@ -6,9 +6,9 @@
     "orientation": "portrait",
 
     "splash": {
-
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#2a6f97"
+      "backgroundColor": "#014F89"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

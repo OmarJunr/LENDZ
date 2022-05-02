@@ -14,6 +14,7 @@ import { Button } from "../../components/Button";
 import { SmallInput } from "../../components/SmallInput";
 import { ButtonVsu } from "../../components/ButtonVsu";
 import { ButtonPassword } from "../../components/ButtonPassword";
+import { Background } from "../../components/Background";
 
 export function VerifyVsu() {
     const navigation = useNavigation()
@@ -24,10 +25,8 @@ export function VerifyVsu() {
     }
 
     return (
-        <KeyboardAvoidingView
-            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-            style={styles.container}>
-            <ScrollView style={styles.scroll}>
+        <Background>
+            <ScrollView style={styles.container}>
 
                 <View style={styles.cabecalho}>
                     <AntDesign
@@ -87,8 +86,9 @@ export function VerifyVsu() {
                     </View>
 
                 </View>
+
             </ScrollView>
-        </KeyboardAvoidingView>
+        </Background>
 
     );
 }
