@@ -6,8 +6,8 @@ import { filters } from '../../utils/filters';
 
 
 type Props = {
-    filterSelected: string;
-    setFilter: (filterId: string) => void;
+    filterSelected?: string;
+    setFilter?: (filterId: string) => void;
 }
 
 export function FiltersSelect({ filterSelected, setFilter }: Props) {

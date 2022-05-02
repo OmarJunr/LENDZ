@@ -70,7 +70,5 @@ export function Principal() {
                 </View>
             </ScrollView>
         </Background>
-
-
     );
 }

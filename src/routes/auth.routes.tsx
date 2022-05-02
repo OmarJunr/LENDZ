@@ -24,7 +24,7 @@ export function AuthRoutes() {
                 }
             }}
         >
-
+            
             <Screen
                 name="SignIn"
                 component={SignIn}
@@ -33,7 +33,6 @@ export function AuthRoutes() {
                 name="Cadastro"
                 component={Cadastro}
             />
-
             <Screen
                 name="Password"
                 component={Password}
