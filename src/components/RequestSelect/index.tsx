@@ -25,7 +25,7 @@ export function RequestSelect({ requestSelected, setRequest }: Props) {
                             onPress={() => setRequest(request.id)}
                         >
                             <View
-                                style={[styles.interno, { opacity: request.id === requestSelected ? 1 : 0.8 }]}
+                                style={[styles.interno,  request.id === requestSelected ? styles.checked : styles.check]}
                             >
                                 <View style={[styles.content, { elevation: request.id === requestSelected ? 1 : 0 }]}>
                                     <ImageBackground source={request.icon} style={styles.imageContainer} />

@@ -7,9 +7,15 @@ import { styles } from './styles';
 export function Itens() {
     return (
         <View style={styles.container}>
-            <Feather name="box" size={24} color="white" />
-            <Feather name="home" size={24} color="white" />
-            <Feather name="user" size={24} color="white" />
+            <RectButton >
+                <Feather name="box" size={24} color="white" />
+            </RectButton>
+            <RectButton>
+                <Feather name="home" size={24} color="white" />
+            </RectButton>
+            <RectButton>
+                <Feather name="user" size={24} color="white" />
+            </RectButton>
         </View>
     )
 }

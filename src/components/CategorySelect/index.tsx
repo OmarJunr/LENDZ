@@ -25,7 +25,7 @@ export function CategorySelect({ categorySelected, setCategory, }: Props) {
                             onPress={() => setCategory(category.id)}
                         >
                             <View
-                                style={[styles.interno, { opacity: category.id === categorySelected ? 1 : 0.8 }]}
+                                style={[styles.interno, category.id === categorySelected ? styles.checked : styles.check]}
                             >
                                 <View style={[styles.content, { elevation: category.id === categorySelected ? 1 : 0 }]}>
                                     <ImageBackground source={category.icon} style={styles.imageContainer} />

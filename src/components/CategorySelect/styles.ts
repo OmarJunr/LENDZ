@@ -48,5 +48,13 @@ export const styles = StyleSheet.create({
         padding: 6,
         borderRadius: 20,
         marginLeft: 8,
+    },
+    check:{
+        borderColor: '#fbfbfb',
+        opacity:0.8
+    },
+    checked:{
+        borderColor: '#2a6f97',
+        opacity:1
     }
 });
