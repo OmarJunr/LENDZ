@@ -6,6 +6,7 @@ import { styles } from './styles';
 import { useNavigation } from "@react-navigation/native";
 
 export function ButtonCadastro() {
+    
     const navigation = useNavigation()
 
     function handleCadastro() {

@@ -8,6 +8,9 @@ import { Password } from "../screens/Password";
 import { VerifyVsu } from "../screens/VerifyVsu";
 
 import { theme } from '../global/styles/theme';
+import { Carrinho } from "../screens/Carrinho";
+import { SolicitacaoAceita } from "../screens/SolicitacaoAceita";
+import { Fila } from "../screens/Fila";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -21,6 +24,14 @@ export function AuthRoutes() {
                 }
             }}
         >
+            <Screen
+                name="SolicitacaoAceita"
+                component={SolicitacaoAceita}
+            />
+            <Screen
+                name="Fila"
+                component={Fila}
+            />
             <Screen
                 name="SignIn"
                 component={SignIn}
