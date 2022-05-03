@@ -27,7 +27,7 @@ export function AuthRoutes() {
                 }
             }}
         >
-            
+
             <Screen
                 name="SignIn"
                 component={SignIn}
@@ -66,13 +66,19 @@ export function AuthRoutes() {
             />
             <Screen
                 name="ProductDetail"
-                component={ProductDetail} />
+                component={ProductDetail}
+            />
             <Screen
                 name="User"
+<<<<<<< HEAD
                 component={UserProfile} />
             <Screen
                 name="LocalRetirada"
                 component={LocalRetirada} />
+=======
+                component={UserProfile}
+            />
+>>>>>>> origin/main
 
         </Navigator>
 
