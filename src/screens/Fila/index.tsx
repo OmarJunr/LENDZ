@@ -4,6 +4,7 @@ import {
     View, Text, ScrollView, KeyboardAvoidingView, Platform, Image
 } from 'react-native';
 
+import { RectButton } from "react-native-gesture-handler"
 import { styles } from './styles';
 import { useNavigation } from "@react-navigation/native";
 import { Lines } from '../../components/Lines';
@@ -19,6 +20,14 @@ import { Background } from '../../components/Background';
 import foto1 from '../../assets/assets/hdexterno.png'
 
 export function Fila() {
+    
+    const navigation = useNavigation()
+
+    function Principal() {
+        //@ts-ignore
+        navigation.navigate("Principal");
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.cabecalho}>
@@ -26,6 +35,7 @@ export function Fila() {
                     name="arrowleft"
                     color={theme.colors.black}
                     size={30}
+                    onPress={Principal}
                 />
                 <Text style={styles.title}>Fila de Empréstimos</Text>
             </View>
@@ -39,22 +49,23 @@ export function Fila() {
                 <Text style={styles.font}>HD Externo</Text>
                 <Text style={styles.disponivel}>Na fila de Empréstimo</Text>
                 <View style={styles.qtdButtons}>
-                    <AntDesign
-                        name="minuscircleo"
-                        color={"grey"}
-                        size={20}
-                    />
+                    <RectButton>
+                        <AntDesign
+                            name="minuscircleo"
+                            color={"grey"}
+                            size={20}
+                        />
+                    </RectButton>
                     <Text style={styles.quantity}>2</Text>
-                    <AntDesign
-                        name="pluscircleo"
-                        color={"grey"}
-                        size={20}
-                    />
+                    <RectButton>
+                        <AntDesign
+                            name="pluscircleo"
+                            color={"grey"}
+                            size={20}
+                        />
+                    </RectButton>
                 </View>
             </View>
-            {/* <View style={styles.button}>
-                <ButtonFila />
-            </View> */}
         </View>
     );
 }

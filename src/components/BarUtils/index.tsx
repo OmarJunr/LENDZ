@@ -5,6 +5,7 @@ import { styles } from './styles';
 import { ModalView } from "../ModalView";
 import { BarLeft } from "../../screens/BarLeft";
 import { PanGestureHandler } from 'react-native-gesture-handler';
+import { useNavigation } from "@react-navigation/native";
 
 type Props = {
     teste?: false
@@ -15,6 +16,14 @@ export function BarUtils({ teste }: Props) {
     function ModalMinimaze() {
         setOpenMenuModal(false)
     }
+
+    const navigation = useNavigation()
+
+    function Carrinho() {
+        //@ts-ignore
+        navigation.navigate("Carrinho");
+    }
+    
     return (
         <>
             <View style={styles.container}>
@@ -26,7 +35,7 @@ export function BarUtils({ teste }: Props) {
                     />
                     <View style={styles.twoItens}>
                         <Feather name="bell" size={24} color="black" style={{ marginHorizontal: 10 }} />
-                        <Feather name="shopping-cart" size={24} color="black" />
+                        <Feather name="shopping-cart" size={24} color="black" onPress={Carrinho}/>
                     </View>
                 </View>
             </View>

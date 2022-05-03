@@ -2,6 +2,8 @@ import { StyleSheet } from 'react-native';
 import { theme } from '../../global/styles/theme';
 import { getStatusBarHeight } from "react-native-iphone-x-helper";
 import { Background } from '../../components/Background';
+import { BarLeft } from '../BarLeft';
+import { FlipInEasyX } from 'react-native-reanimated';
 
 
 export const styles = StyleSheet.create({
@@ -64,8 +66,8 @@ export const styles = StyleSheet.create({
         height: '15%',
         marginTop: getStatusBarHeight(),
         flexDirection: 'row',
-        marginLeft: 20,
         alignItems: 'center',
+        marginLeft: 20,
 
     },
 
