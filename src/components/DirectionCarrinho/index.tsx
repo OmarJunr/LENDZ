@@ -16,13 +16,14 @@ export function DirectionCarrinho() {
     }
     return (
         <View style={styles.container}   >
-             <RectButton onPress={handleCarrinho} style={{ flexDirection: "row", alignItems: "center", width: '80%' }}>
+             <RectButton style={{ flexDirection: "row", alignItems: "center", width: '80%' }}>
             <Feather
                 name='shopping-cart'
                 size={24}
                 color="white"
+                onPress={handleCarrinho}
             />
-            <Text style={styles.titles} >
+            <Text style={styles.titles} onPress={handleCarrinho}>
                 Meu carinho
             </Text>
             </RectButton>

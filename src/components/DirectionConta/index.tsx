@@ -12,17 +12,18 @@ export function DirectionConta() {
 
     function handleConta() {
         //@ts-ignore
-        navigation.navigate("Conta");
+        navigation.navigate("User");
     }
     return (
         <View style={styles.container}   >
-            <RectButton onPress={handleConta} style={{ flexDirection: "row", alignItems: "center", width: '80%' }}>
+            <RectButton style={{ flexDirection: "row", alignItems: "center", width: '80%' }}>
                 <Feather
                     name='user'
                     size={24}
                     color="white"
+                    onPress={handleConta}
                 />
-                <Text style={styles.titles} >
+                <Text style={styles.titles}  onPress={handleConta}>
                     Minha Conta
                 </Text>
             </RectButton>

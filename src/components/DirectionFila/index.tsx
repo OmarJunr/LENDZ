@@ -16,15 +16,15 @@ export function DirectionFila() {
     }
     return (
         <View style={styles.container}   >
-            <RectButton onPress={handleFila} style={{ flexDirection: "row", alignItems: "center", width: '80%' }}>
+            <RectButton style={{ flexDirection: "row", alignItems: "center", width: '80%' }}>
 
                 <Feather
                     name='box'
                     size={24}
                     color="white"
-
+                    onPress={handleFila} 
                 />
-                <Text style={styles.titles} >
+                <Text style={styles.titles} onPress={handleFila} >
                     Esperando na Fila
                 </Text>
                 </RectButton >

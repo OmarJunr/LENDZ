@@ -26,7 +26,7 @@ export function AuthRoutes() {
                 }
             }}
         >
-            
+
             <Screen
                 name="SignIn"
                 component={SignIn}
@@ -65,10 +65,12 @@ export function AuthRoutes() {
             />
             <Screen
                 name="ProductDetail"
-                component={ProductDetail} />
+                component={ProductDetail}
+            />
             <Screen
                 name="User"
-                component={UserProfile} />
+                component={UserProfile}
+            />
 
         </Navigator>
 
