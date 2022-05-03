@@ -83,4 +83,25 @@ export const styles = StyleSheet.create({
         marginTop: -50,
 
     },
+
+    rodape: {
+        marginVertical: 300,
+        flexDirection: 'column',
+        alignItems: 'center',
+        
+    },
+
+    textRodape: {
+        textAlign: 'center',
+        fontFamily: theme.fonts.title700,
+        fontSize: 20,
+        color: "grey",
+    },
+
+    textRodapeQtd:{
+        textAlign: 'center',
+        fontWeight: "bold",
+        fontSize: 30,
+
+    },
 });

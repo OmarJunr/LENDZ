@@ -28,6 +28,7 @@ export const styles = StyleSheet.create({
     image:{
         width: 120,
         height: 80,
+
     },
 
     itemInfo:{
@@ -42,23 +43,20 @@ export const styles = StyleSheet.create({
     font:{
         fontSize: 16,
         color: theme.colors.black,
+
     },
 
     qtdButtons:{
         flexDirection: 'row',
         alignItems: 'center',
-    },
 
-    button:{
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginBottom: 120,
     },
 
     quantity:{
         marginHorizontal: 7,
         color: theme.colors.black,
         fontSize: 20,
+
     },
 
     cabecalho: {
@@ -74,6 +72,7 @@ export const styles = StyleSheet.create({
     disponivel: {
         color: "grey",
         fontSize: 15,
+
     },
 
     title: {
@@ -83,6 +82,28 @@ export const styles = StyleSheet.create({
         fontFamily: theme.fonts.title700,
         marginHorizontal: 80,
         marginTop: -50,
+
+    },
+
+    rodape: {
+        marginVertical: 100,
+        flexDirection: 'column',
+        alignItems: 'center',
+        
+    },
+
+    textRodape: {
+        textAlign: 'center',
+        fontFamily: theme.fonts.title700,
+        fontSize: 20,
+        color: "grey",
+
+    },
+
+    textRodapeQtd:{
+        textAlign: 'center',
+        fontWeight: "bold",
+        fontSize: 30,
 
     },
 });
