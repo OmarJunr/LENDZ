@@ -32,8 +32,8 @@ export function AuthRoutes() {
                 component={SignIn}
             />
             <Screen
-                name="Fila"
-                component={Fila}
+                name="Carrinho"
+                component={Carrinho}
             />
             <Screen
                 name="Cadastro"
@@ -54,6 +54,10 @@ export function AuthRoutes() {
             <Screen
                 name="Principal"
                 component={Principal}
+            />
+            <Screen
+                name="Fila"
+                component={Fila}
             />
             <Screen
                 name="Solicitacao"
