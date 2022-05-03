@@ -6,11 +6,13 @@ import { Cadastro } from '../screens/Cadastro';
 import { Login } from '../screens/Login';
 import { Password } from "../screens/Password";
 import { VerifyVsu } from "../screens/VerifyVsu";
-
+import { Principal } from "../screens/Principal";
 import { theme } from '../global/styles/theme';
 import { Carrinho } from "../screens/Carrinho";
-import { SolicitacaoAceita } from "../screens/SolicitacaoAceita";
 import { Fila } from "../screens/Fila";
+import { Solicitacao } from "../screens/Solicitacao";
+import { ProductDetail } from "../screens/ProductDetail";
+import { UserProfile } from "../screens/User"
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -24,23 +26,19 @@ export function AuthRoutes() {
                 }
             }}
         >
+            
             <Screen
-                name="SolicitacaoAceita"
-                component={SolicitacaoAceita}
+                name="SignIn"
+                component={SignIn}
             />
             <Screen
                 name="Fila"
                 component={Fila}
             />
             <Screen
-                name="SignIn"
-                component={SignIn}
-            />
-            <Screen
                 name="Cadastro"
                 component={Cadastro}
             />
-
             <Screen
                 name="Password"
                 component={Password}
@@ -53,6 +51,20 @@ export function AuthRoutes() {
                 name="VerifyVsu"
                 component={VerifyVsu}
             />
+            <Screen
+                name="Principal"
+                component={Principal}
+            />
+            <Screen
+                name="Solicitacao"
+                component={Solicitacao}
+            />
+            <Screen
+                name="ProductDetail"
+                component={ProductDetail} />
+            <Screen
+                name="User"
+                component={UserProfile} />
 
         </Navigator>
 

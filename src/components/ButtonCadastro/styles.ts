@@ -5,7 +5,6 @@ export const styles = StyleSheet.create({
     container: {
         width: '70%',
         height: 56,
-        backgroundColor: theme.colors.primary,
         borderRadius: 30,
         flexDirection: 'row',
         alignItems: 'center'
@@ -17,5 +16,4 @@ export const styles = StyleSheet.create({
         fontFamily: theme.fonts.title700,
         textAlign: 'center'
     }
-
 });
