@@ -70,15 +70,12 @@ export function AuthRoutes() {
             />
             <Screen
                 name="User"
-<<<<<<< HEAD
-                component={UserProfile} />
+                component={UserProfile} 
+            />
             <Screen
                 name="LocalRetirada"
-                component={LocalRetirada} />
-=======
-                component={UserProfile}
+                component={LocalRetirada} 
             />
->>>>>>> origin/main
 
         </Navigator>
 
