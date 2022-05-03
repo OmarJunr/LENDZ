@@ -12,7 +12,6 @@ type Props = {
 }
 
 export function BarLeft({ ModalMinimaze }: Props) {
-
     const largura = useRef(new Animated.Value(0)).current;
 
     Animated.timing(largura, {
