@@ -2,31 +2,23 @@ import React from "react";
 
 import { View, Text } from "react-native";
 import { styles } from './styles';
-import { Direction } from "../Direction";
-import { RectButton } from "react-native-gesture-handler";
+import { DirectionAjuda } from "../DirectionAjuda";
+import { DirectionConta } from "../DirectionConta";
+import { DirectionCarrinho } from "../DirectionCarrinho";
+import { DirectionPrincipal } from "../DirectionPrincipal";
+import { DirectionFila } from "../DirectionFila";
+import { DirectionSuporte } from "../DirectionSuporte";
 
 export function MenuDirection() {
 
     return (
         <View style={styles.container}>
-            <RectButton style={{ width: '80%' }}>
-                <Direction title="Principal" icon="home" />
-            </RectButton>
-            <RectButton style={{ width: '80%' }}>
-                <Direction title="Meu carinho" icon="shopping-cart" />
-            </RectButton>
-            <RectButton style={{ width: '80%' }}>
-                <Direction title="Esperando na Fila" icon="box" />
-            </RectButton>
-            <RectButton style={{ width: '80%' }}>
-                <Direction title="Minha Conta" icon="user" />
-            </RectButton>
-            <RectButton style={{ width: '80%' }}>
-                <Direction title="Chat do suporte" icon="message-circle" />
-            </RectButton>
-            <RectButton style={{ width: '80%' }}>
-                <Direction title="Ajuda" icon="help-circle" />
-            </RectButton>
+            <DirectionPrincipal />
+            <DirectionCarrinho />
+            <DirectionFila />
+            <DirectionConta />
+            <DirectionSuporte />
+            <DirectionAjuda />
         </View>
     )
 }

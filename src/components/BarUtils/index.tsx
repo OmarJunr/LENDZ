@@ -6,15 +6,14 @@ import { ModalView } from "../ModalView";
 import { BarLeft } from "../../screens/BarLeft";
 import { PanGestureHandler } from 'react-native-gesture-handler';
 
-type Props = {
-    teste?: false
-}
-export function BarUtils({ teste }: Props) {
+
+export function BarUtils() {
     const [openMenuModal, setOpenMenuModal] = useState(false);
 
     function ModalMinimaze() {
         setOpenMenuModal(false)
     }
+    
     return (
         <>
             <View style={styles.container}>
