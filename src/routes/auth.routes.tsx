@@ -12,6 +12,9 @@ import { Solicitacao } from "../screens/Solicitacao";
 import { ProductDetail } from "../screens/ProductDetail";
 import { UserProfile } from "../screens/User"
 
+import { Carrinho } from "../screens/Carrinho";
+import { Fila } from "../screens/Fila";
+
 const { Navigator, Screen } = createStackNavigator();
 
 export function AuthRoutes() {
@@ -28,6 +31,10 @@ export function AuthRoutes() {
             <Screen
                 name="SignIn"
                 component={SignIn}
+            />
+            <Screen
+                name="Carrinho"
+                component={Carrinho}
             />
             <Screen
                 name="Cadastro"
@@ -48,6 +55,10 @@ export function AuthRoutes() {
             <Screen
                 name="Principal"
                 component={Principal}
+            />
+            <Screen
+                name="Fila"
+                component={Fila}
             />
             <Screen
                 name="Solicitacao"

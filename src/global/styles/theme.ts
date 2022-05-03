@@ -4,6 +4,7 @@ export const theme = {
         secondary: '#014F89',
 
         white: '#ffff',
+        black: '#000000',
 
         overlay: 'rgba(0,0,0,0.7',
         highlight: '#ABB1CC',
