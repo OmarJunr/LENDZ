@@ -13,6 +13,7 @@ import { Fila } from "../screens/Fila";
 import { Solicitacao } from "../screens/Solicitacao";
 import { ProductDetail } from "../screens/ProductDetail";
 import { UserProfile } from "../screens/User"
+import { LocalRetirada } from "../screens/LocalRetirada";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -69,6 +70,9 @@ export function AuthRoutes() {
             <Screen
                 name="User"
                 component={UserProfile} />
+            <Screen
+                name="LocalRetirada"
+                component={LocalRetirada} />
 
         </Navigator>
 
