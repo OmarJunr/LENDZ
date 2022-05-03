@@ -13,7 +13,7 @@ export function MenuDirection() {
                 <Direction title="Principal" icon="home" />
             </RectButton>
             <RectButton style={{ width: '80%' }}>
-                <Direction title="Meu carinho" icon="shopping-cart" />
+                <Direction title="Meu carrinho" icon="shopping-cart" />
             </RectButton>
             <RectButton style={{ width: '80%' }}>
                 <Direction title="Esperando na Fila" icon="box" />

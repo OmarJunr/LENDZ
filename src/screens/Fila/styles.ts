@@ -79,7 +79,7 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 25,
         fontFamily: theme.fonts.title700,
-        marginHorizontal: 80,
+        marginHorizontal: 40,
         marginTop: -50,
 
     },
