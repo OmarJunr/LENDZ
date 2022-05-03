@@ -8,6 +8,8 @@ import { Password } from "../screens/Password";
 import { VerifyVsu } from "../screens/VerifyVsu";
 import { Principal } from "../screens/Principal";
 import { theme } from '../global/styles/theme';
+import { Carrinho } from "../screens/Carrinho";
+import { Fila } from "../screens/Fila";
 import { Solicitacao } from "../screens/Solicitacao";
 import { ProductDetail } from "../screens/ProductDetail";
 import { UserProfile } from "../screens/User"
@@ -30,6 +32,10 @@ export function AuthRoutes() {
                 component={SignIn}
             />
             <Screen
+                name="Carrinho"
+                component={Carrinho}
+            />
+            <Screen
                 name="Cadastro"
                 component={Cadastro}
             />
@@ -48,6 +54,10 @@ export function AuthRoutes() {
             <Screen
                 name="Principal"
                 component={Principal}
+            />
+            <Screen
+                name="Fila"
+                component={Fila}
             />
             <Screen
                 name="Solicitacao"

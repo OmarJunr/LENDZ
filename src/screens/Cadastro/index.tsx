@@ -24,10 +24,10 @@ import { Lines } from "../../components/Lines";
 export function Cadastro() {
     const navigation = useNavigation()
 
-    function handleSignIn() {
-        //@ts-ignore
-        navigation.navigate("SignIn");
-    }
+   function handleSignIn() {
+      //@ts-ignore
+       navigation.navigate("SignIn");
+   }
 
     return (
 
@@ -39,7 +39,7 @@ export function Cadastro() {
                         name="arrowleft"
                         color={theme.colors.heading}
                         size={30}
-                        onPress={handleSignIn}
+                       onPress={handleSignIn}
                     />
                     <Image
                         source={IllustrationImg}
