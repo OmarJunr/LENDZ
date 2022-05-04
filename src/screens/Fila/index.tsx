@@ -23,7 +23,7 @@ export function Fila() {
     
     const navigation = useNavigation()
 
-    function Principal() {
+    function HandlePrincipal() {
         //@ts-ignore
         navigation.navigate("Principal");
     }
@@ -35,7 +35,7 @@ export function Fila() {
                     name="arrowleft"
                     color={theme.colors.black}
                     size={30}
-                    onPress={Principal}
+                    onPress={HandlePrincipal}
                 />
                 <Text style={styles.title}>Fila de Empréstimos</Text>
             </View>
@@ -65,6 +65,10 @@ export function Fila() {
                         />
                     </RectButton>
                 </View>
+            </View>
+            <View style={styles.rodape}>
+                <Text style={styles.textRodape}>ITENS NA FILA</Text>
+                <Text style={styles.textRodapeQtd}>2</Text>
             </View>
         </View>
     );
