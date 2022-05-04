@@ -14,16 +14,19 @@ export function Itens() {
         navigation.navigate("Fila");
     }
 
-
+    function HandleUser() {
+        //@ts-ignore
+        navigation.navigate("User");
+    }
     return (
         <View style={styles.container}>
-            <RectButton >
+            <RectButton onPress={HandleFila}>
                 <Feather name="box" size={24} color="white" onPress={HandleFila}/>
             </RectButton>
             <RectButton>
                 <Feather name="home" size={24} color="white" />
             </RectButton>
-            <RectButton>
+            <RectButton onPress={HandleUser}>
                 <Feather name="user" size={24} color="white" />
             </RectButton>
         </View>
