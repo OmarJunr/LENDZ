@@ -16,13 +16,14 @@ export function DirectionSuporte() {
     }
     return (
         <View style={styles.container}   >
-             <RectButton onPress={handleSuporte} style={{flexDirection:"row",alignItems:"center",width:'80%'}}>
+             <RectButton style={{flexDirection:"row",alignItems:"center",width:'80%'}}>
             <Feather
                 name='message-circle'
                 size={24}
                 color="white"
+                onPress={handleSuporte}
             />
-            <Text style={styles.titles} >
+            <Text style={styles.titles}  onPress={handleSuporte}>
                 Chat do suporte
             </Text>
             </RectButton>

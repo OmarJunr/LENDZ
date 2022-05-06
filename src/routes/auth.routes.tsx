@@ -13,8 +13,8 @@ import { Fila } from "../screens/Fila";
 import { Solicitacao } from "../screens/Solicitacao";
 import { ProductDetail } from "../screens/ProductDetail";
 import { UserProfile } from "../screens/User"
+import { Suporte } from "../screens/Suporte";
 import { LocalRetirada } from "../screens/LocalRetirada";
-
 const { Navigator, Screen } = createStackNavigator();
 
 export function AuthRoutes() {
@@ -27,11 +27,15 @@ export function AuthRoutes() {
                 }
             }}
         >
-
             <Screen
                 name="SignIn"
                 component={SignIn}
             />
+            <Screen
+                name="Suporte"
+                component={Suporte}
+            />
+
             <Screen
                 name="Carrinho"
                 component={Carrinho}
@@ -76,6 +80,7 @@ export function AuthRoutes() {
                 name="LocalRetirada"
                 component={LocalRetirada} 
             />
+
 
         </Navigator>
 

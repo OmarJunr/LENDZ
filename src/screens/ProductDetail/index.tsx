@@ -73,11 +73,11 @@ export function ProductDetail() {
 
 function fetchProduct() {
     return {
-        name: "Laptop",
-        description: "A laptop for programming",
+        name: "Pendrive",
+        description: "Pendrive 16GB",
         image: "https://m.media-amazon.com/images/I/51oXPTsEXlL._AC_SY450_.jpg",
         available_quantity: 10,
-        politics: "Políticas"
+        politics: "7 dias devolução"
     }
 }
 
