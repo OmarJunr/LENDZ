@@ -14,6 +14,7 @@ import { Solicitacao } from "../screens/Solicitacao";
 import { ProductDetail } from "../screens/ProductDetail";
 import { UserProfile } from "../screens/User"
 import { Suporte } from "../screens/Suporte";
+import { LocalRetirada } from "../screens/LocalRetirada";
 const { Navigator, Screen } = createStackNavigator();
 
 export function AuthRoutes() {
@@ -73,7 +74,11 @@ export function AuthRoutes() {
             />
             <Screen
                 name="User"
-                component={UserProfile}
+                component={UserProfile} 
+            />
+            <Screen
+                name="LocalRetirada"
+                component={LocalRetirada} 
             />
 
 

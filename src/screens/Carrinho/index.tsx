@@ -24,7 +24,7 @@ export function Carrinho() {
 
     const navigation = useNavigation()
 
-    function Principal() {
+    function HandlePrincipal() {
         //@ts-ignore
         navigation.navigate("Principal");
     }
@@ -36,7 +36,7 @@ export function Carrinho() {
                     name="arrowleft"
                     color={theme.colors.black}
                     size={30}
-                    onPress={Principal}
+                    onPress={HandlePrincipal}
                 />
                 <Text style={styles.title}>Seu Carrinho</Text>
             </View>
@@ -94,7 +94,9 @@ export function Carrinho() {
                     </RectButton>
                 </View>
             </View>
-            <View style={styles.button}>
+            <View style={styles.rodape}>
+                <Text style={styles.textRodape}>ITENS A SOLICITAR</Text>
+                <Text style={styles.textRodapeQtd}>2</Text>
                 <ButtonCarrinho />
             </View>
         </View>

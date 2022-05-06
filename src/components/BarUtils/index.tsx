@@ -15,7 +15,7 @@ export function BarUtils() {
     function ModalMinimaze() {
         setOpenMenuModal(false)
     }
-    function Carrinho() {
+    function HandleCarrinho() {
         //@ts-ignore
         navigation.navigate("Carrinho");
     }
@@ -31,7 +31,7 @@ export function BarUtils() {
                     />
                     <View style={styles.twoItens}>
                         <Feather name="bell" size={24} color="black" style={{ marginHorizontal: 10 }} />
-                        <Feather name="shopping-cart" size={24} color="black" onPress={Carrinho} />
+                        <Feather name="shopping-cart" size={24} color="black" onPress={HandleCarrinho} />
                     </View>
                 </View>
             </View>
