@@ -1,28 +1,34 @@
 import { StyleSheet } from "react-native";
+import { theme } from "../../global/styles/theme";
 
 
 export const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fafafc'
+    },
     header: {
         width: "100%",
-        height: "15%",
+
         marginHorizontal: 16,
-        flexDirection: "row"
+        flexDirection: "row",
+        marginTop: 20,
     },
     local_retirada_text: {
-        color: "#8B98B4",
-        fontSize: 18
+        color: "#85858B",
+        fontSize: 16,
+        fontFamily: theme.fonts.text500,
     },
     middle_container: {
-        flex: 1,
-        marginHorizontal: 16,
-        marginTop: 70
+        alignItems: 'center',
+        backgroundColor: 'white',
+        elevation: 16,
+        height: 480,
+        marginTop: 50,
     },
     title: {
         fontSize: 16,
-        alignSelf: "center",
-        width: "100%",
         color: "#000000",
-        marginBottom: 24
     },
     subtitle: {
         fontSize: 12,
@@ -30,41 +36,42 @@ export const styles = StyleSheet.create({
     },
     image: {
         height: 370,
-        width: "100%",
-        marginHorizontal: 4,
-        marginTop: 16
+        width: 370,
+
     },
     bottom_container: {
-        alignContent: "center",
-        position: "absolute",
+        alignItems: 'center',
         width: "100%",
-        bottom: 0
-    },    
+        marginTop: 20
+    },
     voltar: {
-        borderRadius: 75,
-        height: 58,
-        flex: 4,
-        marginEnd: 16,
-        marginStart: 12,
-        backgroundColor: "#468FAF",
-        flexDirection: "row"
-    },   
+        width: '100%',
+        height: 56,
+        borderRadius: 30,
+        alignItems: 'center',
+        marginVertical: 15
+    },
     voltar_text: {
-        fontSize: 16,
+        fontSize: 18,
         color: "#FFFFFF",
-        marginEnd: 32,
-        marginRight: 32,
-        position: "absolute",
-        right: 0,
-        alignSelf: "center"
+        marginLeft: 10,
+        fontFamily: theme.fonts.title700
     },
     voltar_button: {
         fontSize: 18,
         color: "#FFFFFF",
-        position: "absolute",
-        left: 0,
+        marginLeft: 40,
         alignSelf: "center",
-        marginStart: 32,
-        marginLeft: 32
+    },
+    number: {
+        color: '#000',
+        fontSize: 30,
+        fontFamily: theme.fonts.title700,
+        marginVertical: 5
+    },
+    voltarText: {
+        color: '#61A5C2',
+        fontSize: 18,
+        fontWeight: 'bold'
     }
 })

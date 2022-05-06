@@ -15,6 +15,10 @@ export function Solicitacao() {
         //@ts-ignore
         navigation.navigate("Principal");
     }
+    function handleRetirada() {
+        //@ts-ignore
+        navigation.navigate("LocalRetirada");
+    }
     return (
 
         <View style={styles.container}>
@@ -32,12 +36,14 @@ export function Solicitacao() {
                     retirar seus itens solicitados!
                 </Text>
                 <LinearGradient style={styles.local} colors={['#61A5C2', '#7ec8e1']}>
+                    <Pressable onPress={handleRetirada}>
                     <Text style={styles.localText}>
                         VERIFIQUE LOCAL
                     </Text>
                     <Text style={styles.localText}>
                         PARA RETIRADA
                     </Text>
+                    </Pressable>
                 </LinearGradient>
                 <Pressable style={styles.voltar} onPress={handlePrincipal}>
                     <Text style={styles.voltarText}>
