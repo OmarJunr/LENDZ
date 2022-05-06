@@ -16,7 +16,7 @@ export function DirectionPrincipal() {
     }
     return (
         <View style={styles.container}   >
-            <RectButton onPress={handlePrincipal} style={{flexDirection:"row",alignItems:"center",width:'80%'}}>
+            <RectButton style={{flexDirection:"row",alignItems:"center",width:'80%'}}>
             <Feather
                 name='home'
                 size={24}

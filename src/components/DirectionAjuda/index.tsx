@@ -17,13 +17,14 @@ export function DirectionAjuda() {
     }
     return (
         <View style={styles.container}   >
-               <RectButton onPress={handleAjuda} style={{ flexDirection: "row", alignItems: "center", width: '80%' }}>
+               <RectButton style={{ flexDirection: "row", alignItems: "center", width: '80%' }}>
             <Feather
                 name='help-circle'
                 size={24}
                 color="white"
+                onPress={handleAjuda}
             />
-            <Text style={styles.titles} >
+            <Text style={styles.titles}  onPress={handleAjuda}>
                 Ajuda
             </Text>
             </RectButton>

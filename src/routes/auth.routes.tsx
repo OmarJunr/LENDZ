@@ -26,7 +26,7 @@ export function AuthRoutes() {
                 }
             }}
         >
-                 <Screen
+            <Screen
                 name="SignIn"
                 component={SignIn}
             />
@@ -34,7 +34,7 @@ export function AuthRoutes() {
                 name="Suporte"
                 component={Suporte}
             />
-       
+
             <Screen
                 name="Carrinho"
                 component={Carrinho}
