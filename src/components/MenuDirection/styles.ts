@@ -5,6 +5,6 @@ export const styles = StyleSheet.create({
     container: {
         width: '100%',
         alignItems: "center",
-        marginTop: 50
+        marginTop: 50,
     },
 })

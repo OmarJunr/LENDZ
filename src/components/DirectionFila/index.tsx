@@ -6,11 +6,15 @@ import { styles } from './styles';
 import { useNavigation } from "@react-navigation/native";
 import { RectButton } from "react-native-gesture-handler";
 
-export function DirectionFila() {
+type Props = {
+    ModalMinimaze: boolean
+}
+
+export function DirectionFila({ModalMinimaze}:Props) {
     const navigation = useNavigation()
 
-
     function handleFila() {
+        ModalMinimaze(false)
         //@ts-ignore
         navigation.navigate("Fila");
     }

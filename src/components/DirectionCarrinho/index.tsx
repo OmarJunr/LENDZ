@@ -6,12 +6,17 @@ import { styles } from './styles';
 import { useNavigation } from "@react-navigation/native";
 import { RectButton } from "react-native-gesture-handler";
 
-export function DirectionCarrinho() {
+
+type Props = {
+    ModalMinimaze: boolean
+}
+
+export function DirectionCarrinho({ModalMinimaze}:Props) {
     const navigation = useNavigation()
 
-
     function handleCarrinho() {
-        //@ts-ignore
+        ModalMinimaze(false)
+           //@ts-ignore
         navigation.navigate("Carrinho");
     }
     return (
@@ -23,7 +28,7 @@ export function DirectionCarrinho() {
                 color="white"
                 onPress={handleCarrinho}
             />
-            <Text style={styles.titles} onPress={handleCarrinho}>
+            <Text style={styles.titles}  onPress={handleCarrinho}>
                 Meu carinho
             </Text>
             </RectButton>

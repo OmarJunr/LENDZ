@@ -6,12 +6,15 @@ import { styles } from './styles';
 import { useNavigation } from "@react-navigation/native";
 import { RectButton } from "react-native-gesture-handler";
 
+type Props = {
+    ModalMinimaze: boolean
+}
 
-export function DirectionAjuda() {
+export function DirectionAjuda({ModalMinimaze}:Props) {
     const navigation = useNavigation()
 
-
     function handleAjuda() {
+        ModalMinimaze(false)
         //@ts-ignore
         navigation.navigate("Ajuda");
     }

@@ -28,7 +28,6 @@ export function BarLeft({ ModalMinimaze }: Props) {
                     height: '100%',
                     backgroundColor: '#014F89'
                 }}>
-
                     <Background>
                         <View style={styles.menu}>
 
@@ -36,11 +35,9 @@ export function BarLeft({ ModalMinimaze }: Props) {
                             <Pressable style={styles.lines} onPress={() => ModalMinimaze(false)} >
                                 <View style={styles.line} />
                             </Pressable>
-                            <MenuDirection />
+                            <MenuDirection ModalMinimaze={ModalMinimaze} />
                         </View>
-
                     </Background>
-
                 </Animated.View>
             </View>
             <Pressable style={styles.minimaze} onPress={() => ModalMinimaze(false)} />

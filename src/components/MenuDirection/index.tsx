@@ -9,16 +9,20 @@ import { DirectionPrincipal } from "../DirectionPrincipal";
 import { DirectionFila } from "../DirectionFila";
 import { DirectionSuporte } from "../DirectionSuporte";
 
-export function MenuDirection() {
+type Props = {
+    ModalMinimaze: boolean
+}
+
+export function MenuDirection({ ModalMinimaze }: Props) {
 
     return (
         <View style={styles.container}>
-            <DirectionPrincipal />
-            <DirectionCarrinho />
-            <DirectionFila />
-            <DirectionConta />
-            <DirectionSuporte />
-            <DirectionAjuda />
+            <DirectionPrincipal ModalMinimaze={ModalMinimaze} />
+            <DirectionCarrinho ModalMinimaze={ModalMinimaze} />
+            <DirectionFila ModalMinimaze={ModalMinimaze} />
+            <DirectionConta ModalMinimaze={ModalMinimaze} />
+            <DirectionSuporte ModalMinimaze={ModalMinimaze} />
+            <DirectionAjuda ModalMinimaze={ModalMinimaze} />
         </View>
     )
 }

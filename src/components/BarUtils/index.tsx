@@ -15,6 +15,7 @@ export function BarUtils() {
     function ModalMinimaze() {
         setOpenMenuModal(false)
     }
+    
     function HandleCarrinho() {
         //@ts-ignore
         navigation.navigate("Carrinho");
