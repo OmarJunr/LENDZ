@@ -59,11 +59,6 @@ export function Principal() {
                         <CategorySelect
                             setCategory={setCategory}
                             categorySelected={category}
-                            onClick={(categoryId) => {
-                                    //@ts-ignore
-                                    navigation.navigate("ProductDetail")
-                                }
-                            }
                         />
                     </View>
                     <Itens />

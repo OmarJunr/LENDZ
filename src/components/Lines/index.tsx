@@ -1,6 +1,6 @@
-import React, { ReactNode, useState } from "react";
+import React from "react";
 
-import { View, Modal, Text, Pressable, ModalProps } from 'react-native';
+import { View } from 'react-native';
 
 import { styles } from './styles';
 

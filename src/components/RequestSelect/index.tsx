@@ -4,6 +4,7 @@ import { RectButton, RectButtonProps } from "react-native-gesture-handler";
 import { styles } from './styles';
 import { request } from '../../utils/request';
 import { Feather } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 type Props = {
     requestSelected: string;
@@ -11,6 +12,7 @@ type Props = {
 }
 
 export function RequestSelect({ requestSelected, setRequest }: Props) {
+    const navigation = useNavigation()
     return (
         <>
             <ScrollView
@@ -22,8 +24,14 @@ export function RequestSelect({ requestSelected, setRequest }: Props) {
                 {
                     request.map((request, i) => (
                         <RectButton key={i}
-                            onPress={() => setRequest(request.id)}
-                        >
+                            onPress={() => {[setRequest(request.id),
+                                navigation.navigate('ProductDetail', {
+                                    paramKey: request,
+                                })
+                            ]
+                        }}>
+                            
+                        
                             <View
                                 style={[styles.interno,  request.id === requestSelected ? styles.checked : styles.check]}
                             >

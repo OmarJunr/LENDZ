@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native"
+import { theme } from "../../global/styles/theme"
 
 export const styles = StyleSheet.create({
     container: {
@@ -40,18 +41,6 @@ export const styles = StyleSheet.create({
         height: "33%",
         alignSelf: "center",
         resizeMode: "contain"
-    },
-    info_container: {
-        marginLeft: 16,
-        marginRight: 16,
-        marginTop: 8
-    },
-    info_title: {
-        fontSize: 18
-    },
-    info_description: {
-        fontSize: 14,
-        marginTop: 4
     },
     available_products: {
         fontSize: 20,
@@ -132,5 +121,42 @@ export const styles = StyleSheet.create({
         alignSelf: "center",
         marginRight: 32,
         marginEnd: 32
+    },
+    info_container: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginHorizontal: 20,
+        marginTop: 20
+    },
+    bar: {
+        backgroundColor: '#e9e7e7',
+        width: "90%",
+        height: 1,
+        marginHorizontal: 20,
+        marginTop: 10,
+        opacity: 0.4
+    },
+    barEnable: {
+        backgroundColor: theme.colors.secondary,
+        position: "absolute",
+        bottom: -12,
+        width: "100%",
+        height: 3,
+    },
+    barDisable: {
+        position: "absolute",
+        bottom: -12,
+        width: "100%",
+        height: 3,
+    },
+    titleInfo: {
+        color: theme.colors.black,
+    },
+    titleInfoEnable: {
+        color: theme.colors.secondary,
+    },
+    textInfo: {
+        marginLeft: 20,
+        marginTop: 10
     }
 })

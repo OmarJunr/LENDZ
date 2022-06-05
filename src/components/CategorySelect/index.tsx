@@ -4,14 +4,16 @@ import { RectButton, RectButtonProps } from "react-native-gesture-handler";
 import { styles } from './styles';
 import { categories } from '../../utils/categories';
 import { Feather } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 type Props = {
     categorySelected: string;
     setCategory: (categoryId: string) => void;
-    onClick: (categoryId: string) => void;
 }
 
-export function CategorySelect({ categorySelected, setCategory, onClick}: Props) {
+export function CategorySelect({ categorySelected, setCategory}: Props) {
+    const navigation = useNavigation()
+
     return (
         <>
             <ScrollView
@@ -23,11 +25,14 @@ export function CategorySelect({ categorySelected, setCategory, onClick}: Props)
                 {
                     categories.map((category, i) => (
                         <RectButton key={i}
-                            onPress={() => {
-                                setCategory(category.id)
-                                onClick(category.id)
-                            }}
-                        >
+                            onPress={() => {[
+                                setCategory(category.id),
+                                navigation.navigate('ProductDetail', {
+                                    paramKey: category,
+                                })
+                            ]
+                        }}>
+                        
                             <View
                                 style={[styles.interno, category.id === categorySelected ? styles.checked : styles.check]}
                             >
