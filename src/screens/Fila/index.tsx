@@ -18,9 +18,10 @@ import { ButtonPassword } from "../../components/ButtonPassword";
 import { ButtonVsu } from "../../components/ButtonVsu";
 import { Background } from '../../components/Background';
 import foto1 from '../../assets/assets/hdexterno.png'
+import { Itens } from "../../components/Itens";
 
 export function Fila() {
-    
+
     const navigation = useNavigation()
 
     function HandlePrincipal() {
@@ -29,47 +30,52 @@ export function Fila() {
     }
 
     return (
-        <View style={styles.container}>
-            <View style={styles.cabecalho}>
-                <AntDesign
-                    name="arrowleft"
-                    color={theme.colors.black}
-                    size={30}
-                    onPress={HandlePrincipal}
-                />
-                <Text style={styles.title}>Fila de Empréstimos</Text>
-            </View>
-            <View style={styles.imageContainer}>
-                <Image
-                    source={foto1}
-                    style={styles.image}
-                />
-            </View>
-            <View style={styles.itemInfo}>
-                <Text style={styles.font}>HD Externo</Text>
-                <Text style={styles.disponivel}>Na fila de Empréstimo</Text>
-                <View style={styles.qtdButtons}>
-                    <RectButton>
+        <Background>
+            <View style={styles.container}>
+                <View style={styles.screen}>
+                    <View style={styles.cabecalho}>
                         <AntDesign
-                            name="minuscircleo"
-                            color={"grey"}
-                            size={20}
+                            name="arrowleft"
+                            color={theme.colors.black}
+                            size={30}
+                            onPress={HandlePrincipal}
                         />
-                    </RectButton>
-                    <Text style={styles.quantity}>2</Text>
-                    <RectButton>
-                        <AntDesign
-                            name="pluscircleo"
-                            color={"grey"}
-                            size={20}
+                        <Text style={styles.title}>Fila de Empréstimos</Text>
+                    </View>
+                    <View style={styles.imageContainer}>
+                        <Image
+                            source={foto1}
+                            style={styles.image}
                         />
-                    </RectButton>
+                    </View>
+                    <View style={styles.itemInfo}>
+                        <Text style={styles.font}>HD Externo</Text>
+                        <Text style={styles.disponivel}>Na fila de Empréstimo</Text>
+                        <View style={styles.qtdButtons}>
+                            <RectButton>
+                                <AntDesign
+                                    name="minuscircleo"
+                                    color={"grey"}
+                                    size={20}
+                                />
+                            </RectButton>
+                            <Text style={styles.quantity}>2</Text>
+                            <RectButton>
+                                <AntDesign
+                                    name="pluscircleo"
+                                    color={"grey"}
+                                    size={20}
+                                />
+                            </RectButton>
+                        </View>
+                    </View>
+                    <View style={styles.rodape}>
+                        <Text style={styles.textRodape}>ITENS NA FILA</Text>
+                        <Text style={styles.textRodapeQtd}>2</Text>
+                    </View>
                 </View>
+                <Itens IconSelected="Fila"/>
             </View>
-            <View style={styles.rodape}>
-                <Text style={styles.textRodape}>ITENS NA FILA</Text>
-                <Text style={styles.textRodapeQtd}>2</Text>
-            </View>
-        </View>
+        </Background>
     );
 }

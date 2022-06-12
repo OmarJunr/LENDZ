@@ -23,7 +23,6 @@ export function Principal() {
 
         <Background>
             <BarUtils />
-            <ScrollView >
                 <View style={styles.container}>
                     <View style={styles.screen}>
 
@@ -61,9 +60,8 @@ export function Principal() {
                             categorySelected={category}
                         />
                     </View>
-                    <Itens />
+                    <Itens IconSelected="Principal"/>
                 </View>
-            </ScrollView>
         </Background>
     );
 }

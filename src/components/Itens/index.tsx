@@ -5,7 +5,11 @@ import { Feather } from '@expo/vector-icons';
 import { styles } from './styles';
 import { useNavigation } from "@react-navigation/native";
 
-export function Itens() {
+type Props = {
+    IconSelected?: string;
+
+}
+export function Itens({ IconSelected }: Props) {
 
     const navigation = useNavigation()
 
@@ -18,16 +22,20 @@ export function Itens() {
         //@ts-ignore
         navigation.navigate("User");
     }
+    function HandlePrincipal() {
+        //@ts-ignore
+        navigation.navigate("Principal");
+    }
     return (
         <View style={styles.container}>
-            <RectButton onPress={HandleFila}>
-                <Feather name="box" size={24} color="white" onPress={HandleFila}/>
+            <RectButton onPress={HandleFila} style={IconSelected == 'Fila' ? styles.buttonChecked : styles.buttonCheck}>
+                <Feather name="box" size={26} color="white" onPress={HandleFila} />
             </RectButton>
-            <RectButton>
-                <Feather name="home" size={24} color="white" />
+            <RectButton onPress={HandlePrincipal} style={IconSelected == 'Principal' ? styles.buttonChecked : styles.buttonCheck}>
+                <Feather name="home" size={26} color="white" />
             </RectButton>
-            <RectButton onPress={HandleUser}>
-                <Feather name="user" size={24} color="white" />
+            <RectButton onPress={HandleUser} style={IconSelected == 'User' ? styles.buttonChecked : styles.buttonCheck}>
+                <Feather name="user" size={26} color="white" />
             </RectButton>
         </View>
     )

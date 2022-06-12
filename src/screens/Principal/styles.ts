@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     },
     screen: {
         width: '100%',
-        height: '92%',
+        height: '90%',
         backgroundColor: '#f6f6f6',
         borderBottomLeftRadius: 30,
         borderBottomRightRadius: 30,

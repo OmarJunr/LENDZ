@@ -6,6 +6,10 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1
     },
+    screen: {
+        width: '100%',
+        height: '90%',
+    },
     input: {
         height: 50,
         width: '80%',
@@ -32,8 +36,7 @@ export const styles = StyleSheet.create({
     subContainer: {
         backgroundColor: "white",
         flex: 1,
-        borderTopEndRadius: 30,
-        borderTopLeftRadius: 30
+        borderRadius: 30
     },
     imageContainerSup: {
         width: 50,

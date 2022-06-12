@@ -5,6 +5,8 @@ import { SafeAreaView } from "react-native-safe-area-context"
 import { styles } from "./styles"
 import { AntDesign } from '@expo/vector-icons'
 import { useNavigation } from "@react-navigation/native"
+import { Itens } from "../../components/Itens"
+import { Background } from "../../components/Background"
 
 export function ProductDetail({ route }) {
     const navigation = useNavigation()
@@ -14,80 +16,86 @@ export function ProductDetail({ route }) {
     const [pol, setPol] = useState(false)
 
     return (
-        <SafeAreaView style={styles.container}>
-            <View style={styles.header}>
-                <AntDesign
-                    name="arrowleft"
-                    size={30}
-                    onPress={navigation.goBack} />
-            </View>
-            <Image
-                style={styles.image}
-                source={data.icon} />
-            <View style={styles.product_info_container}>
-                <Text style={styles.name} numberOfLines={2}>
-                    {data.title}
-                </Text>
-                <View style={styles.empty_block}></View>
-                <Text style={isAvailable(data) ? styles.available : styles.unavailable}>
-                    {getAvailabilityText(data)}
-                </Text>
-            </View>
-            <View style={styles.info_container}>
-                <Pressable onPress={() => { [setDesc(true), setAval(false), setPol(false)] }}>
-                    <Text style={desc ? styles.titleInfoEnable : styles.titleInfo}>
-                        Descrição
-                    </Text>
-                    <View style={desc ? styles.barEnable : styles.barDisable} />
-                </Pressable>
-
-                <Pressable onPress={() => { [setDesc(false), setAval(true), setPol(false)] }}>
-                    <Text style={aval ? styles.titleInfoEnable : styles.titleInfo}>
-                        Avaliação
-                    </Text>
-                    <View style={aval ? styles.barEnable : styles.barDisable} />
-                </Pressable>
-                <Pressable onPress={() => { [setDesc(false), setAval(false), setPol(true)] }}>
-                    <Text style={pol ? styles.titleInfoEnable : styles.titleInfo}>
-                        Politicas
-                    </Text>
-                    <View style={pol ? styles.barEnable : styles.barDisable} />
-                </Pressable>
-
-            </View>
-            <View style={styles.bar} />
-            <View style={styles.textInfo}>
-                <Text style={desc ? { display: 'flex' } : { display: 'none' }}>
-                    {data.description}
-                </Text>
-                <Text style={aval ? { display: 'flex' } : { display: 'none' }}>
-                    Tem que ve
-                </Text>
-                <Text style={pol ? { display: 'flex' } : { display: 'none' }}>
-                    {data.politcs}
-                </Text>
-            </View>
-            <View style={styles.bottom_view}>
-                <Text style={styles.available_products}>
-                    Produtos disponíveis: {data.quant}
-                </Text>
-                <View style={styles.button_container}>
-                    <View style={styles.qntd_button_container}>
-                        <RectButton style={styles.dec_button}>
-                            <AntDesign style={styles.button_icon} name="minuscircleo" />
-                        </RectButton>
-                        <Text style={styles.qtd_text}>1</Text>
-                        <RectButton style={styles.inc_button}>
-                            <AntDesign style={styles.button_icon} name="pluscircleo" />
-                        </RectButton>
+        <Background>
+            <SafeAreaView style={styles.container}>
+                <View style={styles.screen}>
+                    <View style={styles.header}>
+                        <AntDesign
+                            name="arrowleft"
+                            size={30}
+                            onPress={navigation.goBack} />
                     </View>
-                    <RectButton style={styles.add_button}>
-                        <Text style={styles.add_text}>ADICIONAR</Text>
-                        <AntDesign name="shoppingcart" style={styles.shop_button} />
-                    </RectButton>
+                    <Image
+                        style={styles.image}
+                        source={data.icon} />
+                    <View style={styles.product_info_container}>
+                        <Text style={styles.name} numberOfLines={2}>
+                            {data.title}
+                        </Text>
+                        <View style={styles.empty_block}></View>
+                        <Text style={isAvailable(data) ? styles.available : styles.unavailable}>
+                            {getAvailabilityText(data)}
+                        </Text>
+                    </View>
+                    <View style={styles.info_container}>
+                        <Pressable onPress={() => { [setDesc(true), setAval(false), setPol(false)] }}>
+                            <Text style={desc ? styles.titleInfoEnable : styles.titleInfo}>
+                                Descrição
+                            </Text>
+                            <View style={desc ? styles.barEnable : styles.barDisable} />
+                        </Pressable>
+
+                        <Pressable onPress={() => { [setDesc(false), setAval(true), setPol(false)] }}>
+                            <Text style={aval ? styles.titleInfoEnable : styles.titleInfo}>
+                                Avaliação
+                            </Text>
+                            <View style={aval ? styles.barEnable : styles.barDisable} />
+                        </Pressable>
+                        <Pressable onPress={() => { [setDesc(false), setAval(false), setPol(true)] }}>
+                            <Text style={pol ? styles.titleInfoEnable : styles.titleInfo}>
+                                Politicas
+                            </Text>
+                            <View style={pol ? styles.barEnable : styles.barDisable} />
+                        </Pressable>
+
+                    </View>
+                    <View style={styles.bar} />
+                    <View style={styles.textInfo}>
+                        <Text style={desc ? { display: 'flex' } : { display: 'none' }}>
+                            {data.description}
+                        </Text>
+                        <Text style={aval ? { display: 'flex' } : { display: 'none' }}>
+                            Tem que ve
+                        </Text>
+                        <Text style={pol ? { display: 'flex' } : { display: 'none' }}>
+                            {data.politcs}
+                        </Text>
+                    </View>
+                    <View style={styles.bottom_view}>
+                        <Text style={styles.available_products}>
+                            Produtos disponíveis: {data.quant}
+                        </Text>
+                        <View style={styles.button_container}>
+                            <View style={styles.qntd_button_container}>
+                                <RectButton style={styles.dec_button}>
+                                    <AntDesign style={styles.button_icon} name="minuscircleo" />
+                                </RectButton>
+                                <Text style={styles.qtd_text}>1</Text>
+                                <RectButton style={styles.inc_button}>
+                                    <AntDesign style={styles.button_icon} name="pluscircleo" />
+                                </RectButton>
+                            </View>
+                            <RectButton style={styles.add_button}>
+                                <Text style={styles.add_text}>ADICIONAR</Text>
+                                <AntDesign name="shoppingcart" style={styles.shop_button} />
+                            </RectButton>
+                        </View>
+                    </View>
+
                 </View>
-            </View>
-        </SafeAreaView>
+                <Itens />
+            </SafeAreaView>
+        </Background>
     )
 }
 

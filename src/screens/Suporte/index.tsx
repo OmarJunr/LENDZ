@@ -7,6 +7,7 @@ import { ScrollView, TextInput } from "react-native-gesture-handler"
 import IllustrationImg from '../../assets/illustration.png';
 import suporte from '../../assets/suporte.png';
 import { Background } from "../../components/Background"
+import { Itens } from "../../components/Itens"
 
 export function Suporte() {
     const navigation = useNavigation()
@@ -14,9 +15,8 @@ export function Suporte() {
     return (
 
         <Background>
-            <ScrollView>
-                <View style={styles.container}>
-
+            <View style={styles.container}>
+                <View style={styles.screen}>
                     <AntDesign
                         name="arrowleft"
                         size={30}
@@ -123,12 +123,10 @@ export function Suporte() {
                                 <Feather name="paperclip" size={24} color="black" style={styles.icons} />
                             </View>
                         </View>
-
                     </View>
-
                 </View>
-            </ScrollView>
+                <Itens />
+            </View>
         </Background >
-
     )
 }

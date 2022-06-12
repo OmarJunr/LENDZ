@@ -3,8 +3,15 @@ import { theme } from "../../global/styles/theme"
 
 export const styles = StyleSheet.create({
     container: {
-        backgroundColor: "#FFFFFF",
+
         flex: 1,
+    },
+    screen: {
+        borderBottomLeftRadius: 30,
+        borderBottomRightRadius: 30,
+        width: '100%',
+        height: '90%',
+        backgroundColor: "#FFFFFF",
     },
     product_info_container: {
         flexDirection: "row",
