@@ -5,6 +5,7 @@ import { styles } from './styles';
 import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from 'expo-linear-gradient';
 import { theme } from "../../global/styles/theme";
+
 type Props = {
     title: string;
     local?: string

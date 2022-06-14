@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
         marginTop:40,
         marginBottom:40,
         justifyContent: "center",
+        
     },
     title: {
         flex: 1,

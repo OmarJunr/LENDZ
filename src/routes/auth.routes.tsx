@@ -17,6 +17,12 @@ import { SignIn } from '../screens/SignIn';
 import { Login } from '../screens/Login';
 import { Fila } from "../screens/Fila";
 
+
+import { BarLeftAdm } from "../screensAdm/BarLeftAdm";
+import { PrincipalAdm } from "../screensAdm/PrincipalAdm";
+import { UserAdm } from "../screensAdm/UserAdm";
+import { SolicitacaoPendetes } from "../screensAdm/SolicitacaoPendetes";
+import { SolicitacaoAdm } from "../screensAdm/SolicitacaoAdm";
 const { Navigator, Screen } = createStackNavigator();
 
 export function AuthRoutes() {
@@ -87,6 +93,27 @@ export function AuthRoutes() {
                 component={EditProfile}
             />
 
+
+            <Screen
+                name="PrincipalAdm"
+                component={PrincipalAdm}
+            />
+            <Screen
+                name="BarLeftAdm"
+                component={BarLeftAdm}
+            />
+            <Screen
+                name="UserAdm"
+                component={UserAdm}
+            />
+            <Screen
+                name="SolicitacaoPendetes"
+                component={SolicitacaoPendetes}
+            />
+            <Screen
+                name="SolicitacaoAdm"
+                component={SolicitacaoAdm}
+            />
 
         </Navigator>
 

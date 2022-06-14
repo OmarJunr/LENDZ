@@ -1,7 +1,7 @@
 import React from "react";
 
 import {
-    View, Text, ScrollView, KeyboardAvoidingView, Platform, Image
+    View, Text, ScrollView, KeyboardAvoidingView, Platform, Image, Pressable
 } from 'react-native';
 
 import { styles } from './styles';
@@ -19,7 +19,12 @@ import { ButtonPrincipal } from "../../components/ButtonPrincipal";
 
 export function Login() {
     const navigation = useNavigation()
-
+   
+        function handlePrincipalAdm() {
+            //@ts-ignore
+            navigation.navigate("PrincipalAdm");
+        }
+    
     return (
         <Background>
             <ScrollView >
@@ -52,6 +57,11 @@ export function Login() {
 
                         <InputsText title="Usuario" placeholder="Digite Seu usuario" />
                         <InputsPassword title="Senha" placeholder="Digite Sua Senha" />
+                        <Pressable onPress={handlePrincipalAdm}>
+                            <Text>
+                                Adm
+                            </Text>
+                        </Pressable>
                         <ButtonPrincipal />
                         <ButtonVsu />
                     </View>

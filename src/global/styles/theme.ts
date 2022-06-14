@@ -6,6 +6,8 @@ export const theme = {
         white: '#ffff',
         black: '#000000',
 
+        selected:'#8B98B4',
+        sombra:'#F2F2F2',
         overlay: 'rgba(0,0,0,0.7',
         highlight: '#ABB1CC',
         heading: '#DDE3F0',
