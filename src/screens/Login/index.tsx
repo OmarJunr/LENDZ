@@ -20,12 +20,6 @@ import { ButtonPrincipal } from "../../components/ButtonPrincipal";
 export function Login() {
     const navigation = useNavigation()
 
-
-    function handleSignIn() {
-        //@ts-ignore
-        navigation.navigate("SignIn");
-    }
-
     return (
         <Background>
             <ScrollView >
@@ -35,7 +29,7 @@ export function Login() {
                             name="arrowleft"
                             color={theme.colors.heading}
                             size={30}
-                            onPress={handleSignIn}
+                            onPress={navigation.goBack}
                         />
                         <Image
                             source={IllustrationImg}

@@ -26,8 +26,8 @@ export function Password() {
 
     return (
         <Background>
-            <ScrollView style={styles.container}>
-            
+            <View style={styles.container}>
+                <View style={styles.separation}>
                     <View style={styles.cabecalho}>
                         <AntDesign
                             name="arrowleft"
@@ -44,22 +44,22 @@ export function Password() {
                     <Text style={styles.title}>
                         LENDZ
                     </Text>
-
-                    <View style={styles.form}>
-                        <View style={styles.TitleBox}>
-                            <Lines />
-                            <Text style={styles.label}>
-                                ALTERAR SENHA
-                            </Text>
-                            <Lines />
-                        </View>
-
-                        <InputsPassword title="Nova senha" placeholder="Digite sua nova senha" />
-                        <InputsPassword title="Confirme sua nova senha" placeholder="Digite sua nova senha" />
-                        <Button title="ALTERAR" />
+                </View>
+                <View style={styles.form}>
+                    <View style={styles.TitleBox}>
+                        <Lines />
+                        <Text style={styles.label}>
+                            ALTERAR SENHA
+                        </Text>
+                        <Lines />
                     </View>
-              
-            </ScrollView>
-            </Background>
+
+                    <InputsPassword title="Nova senha" placeholder="Digite sua nova senha" />
+                    <InputsPassword title="Confirme sua nova senha" placeholder="Digite sua nova senha" />
+                    <Button title="ALTERAR" />
+                </View>
+
+            </View>
+        </Background>
     );
 }

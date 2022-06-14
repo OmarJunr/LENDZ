@@ -1,20 +1,22 @@
 import React from "react";
 import { createStackNavigator } from '@react-navigation/stack'
 
-import { SignIn } from '../screens/SignIn';
-import { Cadastro } from '../screens/Cadastro';
-import { Login } from '../screens/Login';
-import { Password } from "../screens/Password";
+import { LocalRetirada } from "../screens/LocalRetirada";
+import { ProductDetail } from "../screens/ProductDetail";
+import { Solicitacao } from "../screens/Solicitacao";
+import { EditProfile } from "../screens/EditProfile";
 import { VerifyVsu } from "../screens/VerifyVsu";
 import { Principal } from "../screens/Principal";
+import { Cadastro } from '../screens/Cadastro';
+import { Password } from "../screens/Password";
 import { theme } from '../global/styles/theme';
 import { Carrinho } from "../screens/Carrinho";
-import { Fila } from "../screens/Fila";
-import { Solicitacao } from "../screens/Solicitacao";
-import { ProductDetail } from "../screens/ProductDetail";
-import { UserProfile } from "../screens/User"
 import { Suporte } from "../screens/Suporte";
-import { LocalRetirada } from "../screens/LocalRetirada";
+import { UserProfile } from "../screens/User"
+import { SignIn } from '../screens/SignIn';
+import { Login } from '../screens/Login';
+import { Fila } from "../screens/Fila";
+
 const { Navigator, Screen } = createStackNavigator();
 
 export function AuthRoutes() {
@@ -74,11 +76,15 @@ export function AuthRoutes() {
             />
             <Screen
                 name="User"
-                component={UserProfile} 
+                component={UserProfile}
             />
             <Screen
                 name="LocalRetirada"
-                component={LocalRetirada} 
+                component={LocalRetirada}
+            />
+            <Screen
+                name="EditProfile"
+                component={EditProfile}
             />
 
 

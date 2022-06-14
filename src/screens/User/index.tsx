@@ -29,6 +29,10 @@ export function UserProfile() {
         //@ts-ignore
         navigation.navigate("Suporte")
     }
+    function handleEditProfile() {
+        //@ts-ignore
+        navigation.navigate("EditProfile")
+    }
     return (
         <Background>
             <SafeAreaView style={styles.container}>
@@ -52,7 +56,7 @@ export function UserProfile() {
                                     <Text style={styles.email}>
                                         {users.email}
                                     </Text>
-                                    <RectButton style={styles.buttonEdit}>
+                                    <RectButton style={styles.buttonEdit} onPress={handleEditProfile}>
                                         <Text style={styles.textEdit}>
                                             Editar Perfil
                                         </Text>
@@ -85,7 +89,7 @@ export function UserProfile() {
                             </RectButton>
                         </View>
                         <View style={styles.menu_item}>
-                            <RectButton style={{ flexDirection: 'row', width: '100%' }} onPress={handleSuporte} >
+                            <RectButton style={{ flexDirection: 'row', width: '100%' }} onPress={handleSair} >
                                 <Feather style={styles.menu_icon} name={"arrow-left"} />
                                 <Text style={styles.menu_text} >Sair da Conta</Text>
                             </RectButton>

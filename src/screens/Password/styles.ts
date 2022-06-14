@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import { theme } from '../../global/styles/theme';
 import { getStatusBarHeight } from "react-native-iphone-x-helper";
 
@@ -7,9 +7,7 @@ export const styles = StyleSheet.create({
         flex: 1,
     },
     cabecalho: {
-        width: '100%',
-        height: '15%',
-        marginTop: getStatusBarHeight(),
+        marginTop: getStatusBarHeight() + 10,
         flexDirection: 'row',
         marginLeft: 20,
         alignItems: 'center',
@@ -20,14 +18,15 @@ export const styles = StyleSheet.create({
         marginLeft: 100,
     },
     form: {
-        paddingTop: 50,
-        paddingBottom: 50,
-        marginTop: '45%',
+        width: '100%',
+        height: Dimensions.get('window').height * 0.5,
         backgroundColor: theme.colors.white,
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
         alignItems: 'center',
-        position:'relative',
+    },
+    separation: {
+        flex: 1
     },
     label: {
         fontSize: 18,
@@ -39,7 +38,7 @@ export const styles = StyleSheet.create({
     password: {
         textAlign: 'center',
         height: 56,
-        flexDirection: 'row',
+
     },
     title: {
         color: theme.colors.heading,
@@ -48,10 +47,10 @@ export const styles = StyleSheet.create({
         fontFamily: theme.fonts.title700,
     },
     TitleBox: {
-        width:'80%',
+        width: '80%',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-around',
-        marginBottom:30
+        marginVertical: 15
     },
 });

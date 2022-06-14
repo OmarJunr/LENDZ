@@ -19,31 +19,26 @@ import { Background } from "../../components/Background";
 export function VerifyVsu() {
     const navigation = useNavigation()
 
-    function handleLogin() {
-        //@ts-ignore
-        navigation.navigate("Login");
-    }
-
     return (
         <Background>
-            <ScrollView style={styles.container}>
-
-                <View style={styles.cabecalho}>
-                    <AntDesign
-                        name="arrowleft"
-                        color={theme.colors.heading}
-                        size={30}
-                        onPress={handleLogin}
-                    />
-                    <Image
-                        source={IllustrationImg}
-                        style={styles.image} resizeMode="stretch"
-                    />
+            <View style={styles.container}>
+                <View style={styles.separation}>
+                    <View style={styles.cabecalho}>
+                        <AntDesign
+                            name="arrowleft"
+                            color={theme.colors.heading}
+                            size={30}
+                            onPress={navigation.goBack}
+                        />
+                        <Image
+                            source={IllustrationImg}
+                            style={styles.image} resizeMode="stretch"
+                        />
+                    </View>
+                    <Text style={styles.title}>
+                        LENDZ
+                    </Text>
                 </View>
-                <Text style={styles.title}>
-                    LENDZ
-                </Text>
-
                 <View style={styles.form}>
 
                     <View style={styles.TitleBox}>
@@ -87,7 +82,7 @@ export function VerifyVsu() {
 
                 </View>
 
-            </ScrollView>
+            </View>
         </Background>
 
     );
