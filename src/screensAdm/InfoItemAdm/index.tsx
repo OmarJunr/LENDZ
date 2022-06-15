@@ -8,10 +8,10 @@ import { useNavigation } from "@react-navigation/native"
 import { Itens } from "../../components/Itens"
 import { Background } from "../../components/Background"
 
-export function ProductDetail({ route }) {
+export function InfoItemAdm({ route }) {
     const navigation = useNavigation()
     const data = route.params.paramKey;
-    const [bool, setbool] = useState(true)
+    const [teste, setteste] = useState(true)
 
 
     return (
@@ -37,51 +37,32 @@ export function ProductDetail({ route }) {
                         </Text>
                     </View>
                     <View style={styles.info_container}>
-                        <Pressable onPress={() => setbool(!bool)}>
-                            <Text style={bool ? styles.titleInfoEnable : styles.titleInfo}>
+                        <View style={styles.containerTitle}>
+                            <Text style={styles.textTitle}>
                                 Descrição
                             </Text>
-                       
-                        </Pressable>
-
-                        <Pressable onPress={() => setbool(!bool)}>
-                            <Text style={bool ? styles.titleInfo : styles.titleInfoEnable}>
-                                Politicas
-                            </Text>
-                           
-                        </Pressable>
-
-                    </View>
-                    <View style={{ flexDirection: 'row', marginHorizontal: 20 }}>
-                        <View style={bool ? styles.barEnable : styles.barDisable} />
-                        <View style={bool ? styles.barDisable : styles.barEnable} />
-                    </View>
-                    <View style={styles.textInfo}>
-                        <Text style={bool ? { display: 'flex' } : { display: 'none' }}>
-                            {data.description}
-                        </Text>
-                        <Text style={bool ? { display: 'none' } : { display: 'flex' }}>
-                            {data.politcs}
+                        </View>
+                        <Text style={styles.textDesc}>
+                            {data.desc}
                         </Text>
                     </View>
+
                     <View style={styles.bottom_view}>
                         <Text style={styles.available_products}>
-                            Produtos disponíveis: {data.quant}
+                            Produtos disponíveis: {data.dispo}
                         </Text>
                         <View style={styles.button_container}>
                             <View style={styles.qntd_button_container}>
                                 <RectButton style={styles.dec_button}>
                                     <AntDesign style={styles.button_icon} name="minuscircleo" />
                                 </RectButton>
-                                <Text style={styles.qtd_text}>1</Text>
-                                <RectButton style={styles.inc_button}>
-                                    <AntDesign style={styles.button_icon} name="pluscircleo" />
-                                </RectButton>
+                                <Text style={styles.qtd_text}>{data.emprestados}</Text>
+
                             </View>
-                            <RectButton style={styles.add_button}>
-                                <Text style={styles.add_text}>ADICIONAR</Text>
-                                <AntDesign name="shoppingcart" style={styles.shop_button} />
-                            </RectButton>
+                            <View style={styles.devolvido} >
+                                <Text style={styles.add_text}>DEVOLVIDO</Text>
+                                <AntDesign name="check" style={styles.shop_button} />
+                            </View>
                         </View>
                     </View>
 
@@ -94,7 +75,7 @@ export function ProductDetail({ route }) {
 
 
 function isAvailable(data) {
-    return data.quant > 0
+    return data.dispo > 0
 }
 
 function getAvailabilityText(data) {

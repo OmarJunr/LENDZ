@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View} from 'react-native';
+import { View } from 'react-native';
 import { Background } from "../../componentsAdm/Background";
 import { BarUtils } from "../../componentsAdm/BarUtils";
 
@@ -16,20 +16,20 @@ export function PrincipalAdm() {
 
         <Background>
             <BarUtils />
-                <View style={styles.container}>
-               
-                    <View style={styles.screen}>
+            <View style={styles.container}>
 
-                        <ButtonDirection title="Produtos" local="Produtos" height="" width=""/>
-                        <ButtonDirection title="Solicitações Pendetes" local="SolicitacaoPendente" height="" width=""/>
-                        <ButtonDirection title="Gerenciar Estoque" local="GerenciarEstoque" height="" width=""/>
-                        <ButtonDirection title="Chat Com Aluno" local="ChatAluno" height="" width=""/>
-                        <ButtonDirection title="Emprestados" local="Emprestados" height="" width=""/>
-                        <ButtonDirection title="Visão Cliente" local="Principal" height="" width=""/>
+                <View style={styles.screen}>
 
-                    </View>
-                    <Itens IconSelected="Principal"/>
+                    <ButtonDirection title="Produtos" local="Produtos" height="" width="" />
+                    <ButtonDirection title="Solicitações Pendetes" local="SolicitacaoPendetes" height="" width="" />
+                    <ButtonDirection title="Gerenciar Estoque" local="GerenciarEstoque" height="" width="" />
+                    <ButtonDirection title="Chat Com Aluno" local="SuporteAlunos" height="" width="" />
+                    <ButtonDirection title="Emprestados" local="EmprestadosAdm" height="" width="" />
+                    <ButtonDirection title="Visão Cliente" local="Principal" height="" width="" />
+
                 </View>
+                <Itens IconSelected="Principal" />
+            </View>
         </Background>
     );
 }
