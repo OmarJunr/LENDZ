@@ -27,7 +27,7 @@ export function UserAdm() {
     }
     function handleSuporte() {
         //@ts-ignore
-        navigation.navigate("Suporte")
+        navigation.navigate("SuporteAlunos")
     }
 
     return (

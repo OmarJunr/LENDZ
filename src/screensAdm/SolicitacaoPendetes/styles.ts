@@ -1,10 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { theme } from '../../global/styles/theme';
 import { getStatusBarHeight } from "react-native-iphone-x-helper";
-import { Background } from '../../components/Background';
-import { BarLeft } from '../BarLeft';
-import { FlipInEasyX } from 'react-native-reanimated';
-
 
 export const styles = StyleSheet.create({
     container: {
