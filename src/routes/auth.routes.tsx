@@ -25,7 +25,8 @@ import { SolicitacaoPendetes } from "../screensAdm/SolicitacaoPendetes";
 import { SolicitacaoAdm } from "../screensAdm/SolicitacaoAdm";
 import { SuporteAlunos } from "../screensAdm/SuporteAlunos";
 import { SuporteAdm } from "../screensAdm/SuporteAdm";
-
+import { EmprestadosAdm } from "../screensAdm/EmprestadosAdm";
+import { InfoItemAdm } from "../screensAdm/InfoItemAdm";
 const { Navigator, Screen } = createStackNavigator();
 
 export function AuthRoutes() {
@@ -121,9 +122,17 @@ export function AuthRoutes() {
                 name="SuporteAlunos"
                 component={SuporteAlunos}
             />
-               <Screen
+            <Screen
                 name="SuporteAdm"
                 component={SuporteAdm}
+            />
+            <Screen
+                name="EmprestadosAdm"
+                component={EmprestadosAdm}
+            />
+            <Screen
+                name="InfoItemAdm"
+                component={InfoItemAdm}
             />
 
         </Navigator>
