@@ -6,8 +6,8 @@ export const theme = {
         white: '#ffff',
         black: '#000000',
 
-        selected:'#8B98B4',
-        sombra:'#F2F2F2',
+        selected: '#8B98B4',
+        sombra: '#F2F2F2',
         overlay: 'rgba(0,0,0,0.7',
         highlight: '#ABB1CC',
         heading: '#DDE3F0',
@@ -16,11 +16,14 @@ export const theme = {
     },
 
     fonts: {
-        title300:'Rajdhani_300Light',
+        title300: 'Rajdhani_300Light',
         title700: 'Rajdhani_700Bold',
         title500: 'Rajdhani_500Medium',
         text400: 'Inter_400Regular',
         text500: 'Inter_500Medium',
-        text100:'Inter_100Thin'
+        text100: 'Inter_100Thin',
+        poppinsMedium: 'Poppins_500Medium',
+        poppinsBold: 'Poppins_700Bold',
+        poppinsLight: 'Poppins_300Light'
     }
 }

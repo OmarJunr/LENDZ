@@ -16,7 +16,7 @@ export function DirectionSuporte({ModalMinimaze}:Props) {
     function handleSuporte() {
         ModalMinimaze(false)
         //@ts-ignore
-        navigation.navigate("Suporte")
+        navigation.navigate("SuporteAlunos")
     }
     return (
         <View style={styles.container}   >
