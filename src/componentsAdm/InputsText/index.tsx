@@ -6,17 +6,17 @@ import { theme } from "../../global/styles/theme";
 import { styles } from './styles';
 
 type Props = {
-
+    title?:string
     placeholder: string
 }
 
-export function InputsText({ placeholder, ...rest }: Props) {
+export function InputsText({ placeholder,title, ...rest }: Props) {
     return (
 
         <View style={styles.container}>
             <View style={styles.input}>
                 <TextInput
-                
+                defaultValue={title}
                     placeholder={placeholder}
                     style={styles.text}
                     keyboardType='default'

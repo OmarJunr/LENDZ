@@ -15,18 +15,18 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { InputsImage } from "../../componentsAdm/InputsImage";
 import { InputsText } from "../../componentsAdm/InputsText";
 import { InputDescription } from "../../componentsAdm/InputDescription";
-
+import { ButtonRefit } from "../../componentsAdm/ButtonRefit";
+import { ButtonEntry } from "../../components/ButtonEntry";
+import { ButtonDirection } from "../../componentsAdm/ButtonDirection";
 import { DaysSelects } from "../../componentsAdm/DaysSelects";
 
-export function Edit({ route }) {
+export function CreateProducts() {
     const { primary, secondary } = theme.colors;
-    const categories = ["Selecione a Categoria", "Eletronicos", "Agro", "Esportes", "Materias"];
+    const categories = ["Selecione a Categoria", "teste1", "teste2", "teste3", "teste4"];
     const [icon, setIcon] = useState(false)
     const [categorie, setCategorie] = useState(null)
 
     const navigation = useNavigation()
-    const data = route.params.paramKey;
- 
     return (
         <Background>
             <View style={styles.container}>
@@ -39,14 +39,14 @@ export function Edit({ route }) {
                             size={30}
                             onPress={navigation.goBack}
                         />
-                        <Text style={styles.title}>Editar itens</Text>
+                        <Text style={styles.title}>Adicionar Itens</Text>
                     </View>
                     <ScrollView >
                         <View style={styles.containerForm}>
-                            <InputsImage image={data.icon}/>
-                            <InputsText placeholder="Digite o nome do item aqui" title={data.title}/>
+                            <InputsImage/>
+                            <InputsText placeholder="Digite o nome do item aqui" />
                             <SelectDropdown
-                                defaultValue={categories[data.idCategorie]}
+                                defaultValue={categories[0]}
                                 data={categories}
                                 renderDropdownIcon={(icon) => (
                                     icon ?
@@ -83,23 +83,23 @@ export function Edit({ route }) {
                                     <RectButton style={styles.decButton}>
                                         <AntDesign style={styles.buttonIcon} name="minuscircleo" />
                                     </RectButton>
-                                    <Text style={styles.textQtdTotal}>{data.dispo}</Text>
+                                    <Text style={styles.textQtdTotal}>1</Text>
                                     <RectButton style={styles.decButton}>
                                         <AntDesign style={styles.buttonIcon} name="pluscircleo" />
                                     </RectButton>
                                 </View>
                             </View>
 
-                            <DaysSelects daySelected={data.id_day}/>
+                            <DaysSelects/>
 
-                            <InputDescription desc={data.desc}/>
+                            <InputDescription />
                             <RectButton style={styles.button} >
                                 <LinearGradient
                                     style={styles.linear}
                                     colors={[primary, secondary]}
                                 />
                                 <Text style={styles.textButton}>
-                                    Editar
+                                    ADICIONAR
                                 </Text>
                             </RectButton>
                         </View>

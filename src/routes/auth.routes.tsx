@@ -29,6 +29,7 @@ import { EmprestadosAdm } from "../screensAdm/EmprestadosAdm";
 import { InfoItemAdm } from "../screensAdm/InfoItemAdm";
 import { LocalRetiradaAdm } from "../screensAdm/LocalRetiradaAdm";
 import { ProductsAdm } from "../screensAdm/ProductsAdm";
+import { CreateProducts } from "../screensAdm/CreateProducts";
 import { Edit } from "../screensAdm/Edit";
 const { Navigator, Screen } = createStackNavigator();
 
@@ -144,6 +145,10 @@ export function AuthRoutes() {
             <Screen
                 name="ProductsAdm"
                 component={ProductsAdm}
+            />
+            <Screen
+                name="CreateProducts"
+                component={CreateProducts}
             />
             <Screen
                 name="Edit"

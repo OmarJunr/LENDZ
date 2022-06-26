@@ -39,8 +39,8 @@ export function ProductsOpctions({ data }: Props) {
                     Emprestados: {data.emprest}
                 </Text>
                 <View style={styles.refitContainer}>
-                    <ButtonRefit local="Edit" icon="edit" />
-                    <ButtonRefit local="delete" icon="trash" />
+                    <ButtonRefit local="Edit" icon="edit" data={data} />
+                    <ButtonRefit local="delete" icon="trash" data={data}/>
                 </View>
             </View>
 

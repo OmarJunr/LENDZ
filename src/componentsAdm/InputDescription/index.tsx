@@ -4,7 +4,11 @@ import { TextInput, View } from 'react-native';
 
 import { styles } from './styles';
 
-export function InputDescription() {
+type Props = {
+    desc?:string
+}
+
+export function InputDescription({desc}:Props) {
     return (
         <View style={styles.container}>
             <View style={styles.input}>
@@ -17,6 +21,7 @@ export function InputDescription() {
                         keyboardType='default'
                         placeholderTextColor="black"
                         style={[{ color: '#000' }]}
+                        defaultValue={desc}
                     />
                 </View>
             </View>
