@@ -31,11 +31,8 @@ export function Principal() {
                             <Text style={styles.label}>
                                 MAIS SOLICITADOS
                             </Text>
-                            <Lines tam={'20%'} />
+                            <Lines tam={'50%'} />
 
-                            <Text style={styles.seeAll}>
-                                Ver Tudo
-                            </Text>
                         </View>
                         <RequestSelect
                             setRequest={setRequest}
@@ -45,16 +42,9 @@ export function Principal() {
                             <Text style={styles.label}>
                                 CATEGORIAS POPULARES
                             </Text>
-                            <Lines tam={'10%'} />
+                            <Lines tam={'40%'} />
 
-                            <Text style={styles.seeAll}>
-                                Ver Tudo
-                            </Text>
                         </View>
-                        <FiltersSelect
-                            setFilter={setFilter}
-                            filterSelected={filter}
-                        />
                         <CategorySelect
                             setCategory={setCategory}
                             categorySelected={category}

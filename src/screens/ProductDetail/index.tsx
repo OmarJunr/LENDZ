@@ -27,7 +27,7 @@ export function ProductDetail({ route }) {
                     </View>
                     <Image
                         style={styles.image}
-                        source={data.icon} />
+                        source={{uri: data.icon}} />
                     <View style={styles.product_info_container}>
                         <Text style={styles.name} numberOfLines={2}>
                             {data.title}
