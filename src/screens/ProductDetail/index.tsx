@@ -7,6 +7,7 @@ import { AntDesign } from '@expo/vector-icons'
 import { useNavigation } from "@react-navigation/native"
 import { Itens } from "../../components/Itens"
 import { Background } from "../../components/Background"
+import { addItem } from "../../utils/products"
 
 export function ProductDetail({ route }) {
     const navigation = useNavigation()
@@ -78,7 +79,7 @@ export function ProductDetail({ route }) {
                                     <AntDesign style={styles.button_icon} name="pluscircleo" />
                                 </RectButton>
                             </View>
-                            <RectButton style={styles.add_button}>
+                            <RectButton style={styles.add_button} onPress={() => addItem(data)}>
                                 <Text style={styles.add_text}>ADICIONAR</Text>
                                 <AntDesign name="shoppingcart" style={styles.shop_button} />
                             </RectButton>
