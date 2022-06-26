@@ -4,7 +4,7 @@ import { theme } from "../../global/styles/theme";
 export const styles = StyleSheet.create({
     container: {
        backgroundColor: theme.colors.secondary,
-       marginTop:0,
+       marginTop:35,
        borderRadius:50,
        alignItems:"center",
        justifyContent:"center"

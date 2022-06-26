@@ -29,7 +29,7 @@ export function ProductsAdm() {
                     </View>
                     <View style={styles.selected}>
 
-                        <ButtonDirection title="ADICIONAR PRODUTO" local="SolicitacaoAdm" width="80%" height="45%"/>
+                        <ButtonDirection title="ADICIONAR PRODUTO" local="PrincipalAdm" width="80%" height="45%"/>
                     </View>
                 </View>
                 <Itens />

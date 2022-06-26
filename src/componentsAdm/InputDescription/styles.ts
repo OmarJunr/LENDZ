@@ -14,7 +14,6 @@ export const styles = StyleSheet.create({
         marginBottom: 30,
         color: 'white',
         borderRadius: 15,
-
         elevation: 4,
         borderColor: '#eff3',
         borderWidth: 1,

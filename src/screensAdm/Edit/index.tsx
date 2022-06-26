@@ -11,7 +11,7 @@ import { Background } from '../../componentsAdm/Background';
 import SelectDropdown from 'react-native-select-dropdown'
 import { Itens } from "../../componentsAdm/Itens";
 import { MaterialIcons } from '@expo/vector-icons';
-
+import { LinearGradient } from 'expo-linear-gradient';
 import { InputsImage } from "../../componentsAdm/InputsImage";
 import { InputsText } from "../../componentsAdm/InputsText";
 import { InputDescription } from "../../componentsAdm/InputDescription";
@@ -20,6 +20,7 @@ import { ButtonEntry } from "../../components/ButtonEntry";
 import { ButtonDirection } from "../../componentsAdm/ButtonDirection";
 
 export function Edit() {
+    const { primary, secondary } = theme.colors;
     const categories = ["Selecione a Categoria", "teste1", "teste2", "teste3", "teste4"];
     const [icon, setIcon] = useState(false)
     const [categorie, setCategorie] = useState(null)
@@ -38,7 +39,6 @@ export function Edit() {
                             onPress={navigation.goBack}
                         />
                         <Text style={styles.title}>Adicionar Itens</Text>
-
                     </View>
                     <ScrollView >
                         <View style={styles.containerForm}>
@@ -74,11 +74,61 @@ export function Edit() {
                                     return item
                                 }}
                             />
-                            <InputsText placeholder="Digite o nome do item aqui" />
-                            <InputsText placeholder="Digite o nome do item aqui" />
+                            <View style={styles.qntdContainer}>
+                                <Text style={styles.textQtd}>
+                                    Quantidade Total:
+                                </Text>
+                                <View style={styles.qtdButton}>
+                                    <RectButton style={styles.decButton}>
+                                        <AntDesign style={styles.buttonIcon} name="minuscircleo" />
+                                    </RectButton>
+                                    <Text style={styles.textQtdTotal}>1</Text>
+                                    <RectButton>
+                                        <AntDesign style={styles.buttonIcon} name="pluscircleo" />
+                                    </RectButton>
+                                </View>
+                            </View>
+
+                            <View style={styles.containerDay}>
+                                <Text style={styles.textDay}>
+                                    Dias:
+                                </Text>
+                                <View style={styles.selectDay}>
+                                    <Text style={styles.textQtdDays}>
+                                        7
+                                    </Text>
+                                    <View style={styles.containerButtonDay} >
+                                        <RectButton style={styles.buttonDay} />
+                                    </View>
+                                </View>
+                                <View style={styles.selectDay}>
+                                    <Text style={styles.textQtdDays}>
+                                        14
+                                    </Text>
+                                    <View style={styles.containerButtonDay} >
+                                        <RectButton style={styles.buttonDay} />
+                                    </View>
+                                </View>
+                                <View style={styles.selectDay}>
+                                    <Text style={styles.textQtdDays}>
+                                        21
+                                    </Text>
+                                    <View style={styles.containerButtonDay} >
+                                        <RectButton style={styles.buttonDay} />
+                                    </View>
+                                </View>
+                            </View>
 
                             <InputDescription />
-                            <ButtonDirection height="10%" width="10%" title="ADICIONAR" local="PrincipalAdm" />
+                            <RectButton style={styles.button} >
+                                <LinearGradient
+                                    style={styles.linear}
+                                    colors={[primary, secondary]}
+                                />
+                                <Text style={styles.textButton}>
+                                    ADICIONAR
+                                </Text>
+                            </RectButton>
                         </View>
                     </ScrollView>
                 </View>

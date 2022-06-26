@@ -52,7 +52,5 @@ export function ItensSolicitacao({ data }: Props) {
                 </Text>
             </View>
         </RectButton>
-
-
     );
 }
