@@ -79,7 +79,7 @@ export function ProductDetail({ route }) {
                                     <AntDesign style={styles.button_icon} name="pluscircleo" />
                                 </RectButton>
                             </View>
-                            <RectButton style={styles.add_button} onPress={() => addItem(data)}>
+                            <RectButton style={styles.add_button} onPress={ () => {if(data.quant > 0) addItem(data)} }>
                                 <Text style={styles.add_text}>ADICIONAR</Text>
                                 <AntDesign name="shoppingcart" style={styles.shop_button} />
                             </RectButton>

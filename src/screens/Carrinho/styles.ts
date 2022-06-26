@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
     },
     image:{
         width: 120,
-        height: 80,
+        height: 120,
 
     },
     itemInfo:{
