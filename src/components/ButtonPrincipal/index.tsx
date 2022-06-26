@@ -5,8 +5,10 @@ import { styles } from './styles';
 import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from 'expo-linear-gradient';
 import { theme } from "../../global/styles/theme";
+import db from "../../database/database"
+import { get, onValue, ref, update } from "firebase/database";
 
-export function ButtonPrincipal() {
+export function ButtonPrincipal({getCredentials}) {
     const navigation = useNavigation()
     const { primary, secondary } = theme.colors;
 
@@ -14,13 +16,20 @@ export function ButtonPrincipal() {
         //@ts-ignore
         navigation.navigate("Principal");
     }
-    function teste() {
-
+    async function validateCredentials() {
+        const credentials = getCredentials()
+        get(ref(db, '/user')).then(usersList => {
+            usersList.forEach((user) => {
+                if (user && user.val().email == credentials.username && user.val().password == credentials.password) {
+                    Principal()
+                }
+            })
+        })
     }
     return (
         <RectButton
             style={styles.container}
-            onPress={Principal}
+            onPress={validateCredentials}
         >
             <LinearGradient
                 style={styles.linear}

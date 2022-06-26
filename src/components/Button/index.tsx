@@ -11,7 +11,7 @@ type Props = {
     local?: string
 }
 
-export function Button({ title, local, ...rest }: Props) {
+export function Button({ title, onClick=null }) {
     const navigation = useNavigation()
     const { primary, secondary } = theme.colors;
 
@@ -19,14 +19,10 @@ export function Button({ title, local, ...rest }: Props) {
         //@ts-ignore
         navigation.navigate("Principal");
     }
-    function teste() {
-    
-    }
     return (
         <RectButton
             style={styles.container}
-            onPress={local ? Principal : teste}
-            {...rest}
+            onPress={onClick ? onClick : Principal}
         >
                   <LinearGradient
             style={styles.linear}

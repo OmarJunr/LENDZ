@@ -5,6 +5,10 @@ import { styles } from './styles';
 import { categories } from '../../utils/categories';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import { get, ref } from "firebase/database";
+import { useEffect } from "react";
+import db from "../../database/database";
+
 
 type Props = {
     categorySelected: string;
@@ -13,6 +17,21 @@ type Props = {
 
 export function CategorySelect({ categorySelected, setCategory}: Props) {
     const navigation = useNavigation()
+    const [products, setProducts] = useState(null)
+
+    async function fetch() {
+        get(ref(db, '/products')).then((rproducts) => {
+            if (rproducts && rproducts.val()) {
+                setProducts(rproducts.val())
+            } else {
+                setProducts([])
+            }
+        })
+    }
+
+    useEffect(() => {
+        fetch()
+    })
 
     return (
         <>
@@ -23,7 +42,7 @@ export function CategorySelect({ categorySelected, setCategory}: Props) {
                 contentContainerStyle={{ paddingRight: 40 }}
             >
                 {
-                    categories.map((category, i) => (
+                    products && products.map((category, i) => (
                         <RectButton key={i}
                             onPress={() => {[
                                 setCategory(category.id),
@@ -37,7 +56,7 @@ export function CategorySelect({ categorySelected, setCategory}: Props) {
                                 style={[styles.interno, category.id === categorySelected ? styles.checked : styles.check]}
                             >
                                 <View style={[styles.content, { elevation: category.id === categorySelected ? 1 : 0 }]}>
-                                    <ImageBackground source={category.icon} style={styles.imageContainer} />
+                                    <ImageBackground source={{uri: category.icon}} style={styles.imageContainer} />
                                 </View>
                                 <Text style={styles.title}>
                                     {category.title}

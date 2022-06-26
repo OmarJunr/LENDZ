@@ -11,7 +11,7 @@ type Props = {
     placeholder: string;
 }
 
-export function InputsPassword({ title, placeholder, ...rest }: Props) {
+export function InputsPassword({ title, placeholder, setText = null}) {
     const [eyes, setEyes] = useState(true);
 
     return (
@@ -23,6 +23,9 @@ export function InputsPassword({ title, placeholder, ...rest }: Props) {
                     <TextInput
                         placeholder={placeholder}
                         secureTextEntry={eyes}
+                        onChangeText={(text) => {
+                            if (setText) setText(text)
+                        }}
                     />
                 </View>
                 <RectButton

@@ -9,7 +9,7 @@ type Props={
     placeholder:string
 }
 
-export function InputsEmail({title,placeholder,...rest}:Props) {
+export function InputsEmail({title,placeholder,setEmail=null}) {
     return (
         
         <View style={styles.container}>
@@ -19,6 +19,11 @@ export function InputsEmail({title,placeholder,...rest}:Props) {
                     <TextInput
                         placeholder={placeholder}
                         keyboardType='email-address'
+                        onChangeText={(text) => {
+                            if (setEmail) {
+                                setEmail(text)
+                            }
+                        }}
                     />
                 </View>
             </View>

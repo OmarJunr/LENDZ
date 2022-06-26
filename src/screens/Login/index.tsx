@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
     View, Text, ScrollView, KeyboardAvoidingView, Platform, Image, Pressable
@@ -20,11 +20,14 @@ import { ButtonPrincipal } from "../../components/ButtonPrincipal";
 export function Login() {
     const navigation = useNavigation()
    
-        function handlePrincipalAdm() {
-            //@ts-ignore
-            navigation.navigate("PrincipalAdm");
-        }
+    function handlePrincipalAdm() {
+        //@ts-ignore
+        navigation.navigate("PrincipalAdm");
+    }
     
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+
     return (
         <Background>
             <ScrollView >
@@ -55,14 +58,19 @@ export function Login() {
                             <Lines />
                         </View>
 
-                        <InputsText title="Usuario" placeholder="Digite Seu usuario" />
-                        <InputsPassword title="Senha" placeholder="Digite Sua Senha" />
+                        <InputsText title="Usuario" placeholder="Digite Seu usuario" setText={setUsername} />
+                        <InputsPassword title="Senha" placeholder="Digite Sua Senha" setText={setPassword}/>
                         <Pressable onPress={handlePrincipalAdm}>
                             <Text>
                                 Adm
                             </Text>
                         </Pressable>
-                        <ButtonPrincipal />
+                        <ButtonPrincipal getCredentials={() => {
+                            return {
+                                username: username,
+                                password: password,
+                            }
+                        }}/>
                         <ButtonVsu />
                     </View>
                 </View>

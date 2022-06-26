@@ -5,6 +5,11 @@ import { styles } from './styles';
 import { request } from '../../utils/request';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import { createRef } from "react";
+import { useRef } from "react";
+import { get, ref, update } from "firebase/database";
+import db from "../../database/database";
+import { useEffect } from "react";
 
 type Props = {
     requestSelected: string;
@@ -13,6 +18,25 @@ type Props = {
 
 export function RequestSelect({ requestSelected, setRequest }: Props) {
     const navigation = useNavigation()
+    const [products, setProducts] = useState(null)
+
+    async function fetch() {
+        get(ref(db, '/products')).then((rproducts) => {
+            if (rproducts && rproducts.val()) {
+                setProducts(rproducts.val())
+            } else {
+                setProducts([])
+            }
+        })
+    }
+
+    useEffect(() => {
+        fetch()
+    })
+    function filterList(product) {
+        return product.top
+    }
+
     return (
         <>
             <ScrollView
@@ -20,9 +44,10 @@ export function RequestSelect({ requestSelected, setRequest }: Props) {
                 style={styles.container}
                 showsHorizontalScrollIndicator={false}
                 contentContainerStyle={{ paddingRight: 40 }}
+                
             >
                 {
-                    request.map((request, i) => (
+                    products && products.filter(filterList).map((request, i) => (
                         <RectButton key={i}
                             onPress={() => {[setRequest(request.id),
                                 navigation.navigate('ProductDetail', {
@@ -36,7 +61,7 @@ export function RequestSelect({ requestSelected, setRequest }: Props) {
                                 style={[styles.interno,  request.id === requestSelected ? styles.checked : styles.check]}
                             >
                                 <View style={[styles.content, { elevation: request.id === requestSelected ? 1 : 0 }]}>
-                                    <ImageBackground source={request.icon} style={styles.imageContainer} />
+                                    <ImageBackground source={{uri: request.icon}} style={styles.imageContainer} />
                                 </View>
                                 <Text style={styles.title}>
                                     {request.title}

@@ -9,7 +9,7 @@ type Props={
     placeholder:string
 }
 
-export function InputsText({title,placeholder,...rest}:Props) {
+export function InputsText({title,placeholder,setText = null}) {
     return (
         
         <View style={styles.container}>
@@ -19,6 +19,9 @@ export function InputsText({title,placeholder,...rest}:Props) {
                     <TextInput
                         placeholder={placeholder}
                         keyboardType='default'
+                        onChangeText={(text) => { 
+                            if (setText) setText(text)
+                         }}
                     />
                 </View>
             </View>
