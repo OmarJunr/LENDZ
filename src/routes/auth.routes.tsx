@@ -28,6 +28,8 @@ import { SuporteAdm } from "../screensAdm/SuporteAdm";
 import { EmprestadosAdm } from "../screensAdm/EmprestadosAdm";
 import { InfoItemAdm } from "../screensAdm/InfoItemAdm";
 import { LocalRetiradaAdm } from "../screensAdm/LocalRetiradaAdm";
+import { ProductsAdm } from "../screensAdm/ProductsAdm";
+import { Edit } from "../screensAdm/Edit";
 const { Navigator, Screen } = createStackNavigator();
 
 export function AuthRoutes() {
@@ -139,6 +141,15 @@ export function AuthRoutes() {
                 name="LocalRetiradaAdm"
                 component={LocalRetiradaAdm}
             />
+            <Screen
+                name="ProductsAdm"
+                component={ProductsAdm}
+            />
+            <Screen
+                name="Edit"
+                component={Edit}
+            />
+
 
         </Navigator>
 

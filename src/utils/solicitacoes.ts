@@ -9,6 +9,7 @@ export const solicitacoes = [
         dispo: 10,
         aluno: 'Jorge',
         icon: pendrive,
+        emprest:5
     },
     {
         id: '2',
@@ -17,6 +18,7 @@ export const solicitacoes = [
         dispo: 4,
         aluno: 'Jorge',
         icon: filtro,
+        emprest:2
     },
     {
         id: '3',
@@ -25,6 +27,7 @@ export const solicitacoes = [
         dispo: 4,
         aluno: 'Cleber',
         icon: filtro,
+        emprest:1
     },
     {
         id: '4',
@@ -33,5 +36,6 @@ export const solicitacoes = [
         dispo: 4,
         aluno: 'Cleber',
         icon: filtro,
+        emprest:5
     },
 ]
