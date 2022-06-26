@@ -67,8 +67,8 @@ export function Login() {
                         </Pressable>
                         <ButtonPrincipal getCredentials={() => {
                             return {
-                                "username": username,
-                                "password": password,
+                                username: username,
+                                password: password,
                             }
                         }}/>
                         <ButtonVsu />
