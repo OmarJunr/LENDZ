@@ -27,6 +27,7 @@ import { SuporteAlunos } from "../screensAdm/SuporteAlunos";
 import { SuporteAdm } from "../screensAdm/SuporteAdm";
 import { EmprestadosAdm } from "../screensAdm/EmprestadosAdm";
 import { InfoItemAdm } from "../screensAdm/InfoItemAdm";
+import { LocalRetiradaAdm } from "../screensAdm/LocalRetiradaAdm";
 const { Navigator, Screen } = createStackNavigator();
 
 export function AuthRoutes() {
@@ -133,6 +134,10 @@ export function AuthRoutes() {
             <Screen
                 name="InfoItemAdm"
                 component={InfoItemAdm}
+            />
+            <Screen
+                name="LocalRetiradaAdm"
+                component={LocalRetiradaAdm}
             />
 
         </Navigator>

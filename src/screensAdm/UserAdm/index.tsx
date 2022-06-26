@@ -19,7 +19,7 @@ export function UserAdm() {
     }
     function handleRetirada() {
         //@ts-ignore
-        navigation.navigate("LocalRetirada");
+        navigation.navigate("LocalRetiradaAdm");
     }
     function handleSair() {
         //@ts-ignore
