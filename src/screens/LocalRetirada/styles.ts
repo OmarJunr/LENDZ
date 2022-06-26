@@ -73,5 +73,19 @@ export const styles = StyleSheet.create({
         color: '#61A5C2',
         fontSize: 18,
         fontWeight: 'bold'
+    },
+    map: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+    },
+    mapContainer: {
+
+        width: '100%',
+        height: '80%',
+        justifyContent: 'flex-end',
+        alignItems: 'flex-end',
     }
 })

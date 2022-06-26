@@ -4,8 +4,7 @@ import { View, Text, ImageBackground } from 'react-native';
 
 import { styles } from './styles';
 import { useNavigation } from "@react-navigation/native";
-import { RectButton } from "react-native-gesture-handler";
-import { Feather } from '@expo/vector-icons'
+import { ButtonRefit } from "../ButtonRefit";
 
 export type EventProps = {
     id: string;
@@ -14,29 +13,18 @@ export type EventProps = {
     dispo: number;
     aluno: string;
     icon: string;
+    emprest: string;
 }
 
 type Props = {
     data: EventProps;
 }
 
-export function ItensSolicitacao({ data }: Props) {
-    const [check, setcheck] = useState(false);
+export function ProductsOpctions({ data }: Props) {
     const navigation = useNavigation()
     return (
-        <RectButton style={styles.container} onPress={() => {
-            setcheck(!check)
-        }}>
-            <View style={styles.select}>
-                <View style={styles.check}>
-                    <Feather
-                        name={check ? 'check' : ""}
-                        size={25}
-                        color='black'
-                    />
-                </View>
-            </View>
-            <View style={styles.image}>
+        <View style={styles.container} >
+            <View style={styles.imageContainer}>
                 <ImageBackground source={data.icon} style={styles.image} />
             </View>
             <View style={styles.infos}>
@@ -48,9 +36,16 @@ export function ItensSolicitacao({ data }: Props) {
                     Solicitado:{data.quantSol}  de Disponivel {data.dispo}
                 </Text>
                 <Text style={styles.aluno}>
-                    Aluno: {data.aluno}
+                    Emprestados: {data.emprest}
                 </Text>
+                <View style={styles.refitContainer}>
+                    <ButtonRefit local="Edit" icon="edit" data={data} />
+                    <ButtonRefit local="delete" icon="trash" data={data}/>
+                </View>
             </View>
-        </RectButton>
+
+        </View>
+
+
     );
 }
