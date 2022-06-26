@@ -9,7 +9,7 @@ type Props={
     placeholder:string
 }
 
-export function InputsNumeric({title,placeholder,...rest}:Props) {
+export function InputsNumeric({title,placeholder,setNumber=null}) {
     return (
         
         <View style={styles.container}>
@@ -19,6 +19,9 @@ export function InputsNumeric({title,placeholder,...rest}:Props) {
                     <TextInput
                         placeholder={placeholder}
                         keyboardType='numeric'
+                        onChangeText={(text) => {
+                            if (setNumber) setNumber(text)
+                        }}
                     />
                 </View>
             </View>

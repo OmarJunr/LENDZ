@@ -6,7 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from 'expo-linear-gradient';
 import { theme } from "../../global/styles/theme";
 import db from "../../database/database"
-import { onValue, ref, update } from "firebase/database";
+import { get, onValue, ref, update } from "firebase/database";
 
 export function ButtonPrincipal({getCredentials}) {
     const navigation = useNavigation()
@@ -18,13 +18,12 @@ export function ButtonPrincipal({getCredentials}) {
     }
     async function validateCredentials() {
         const credentials = getCredentials()
-        onValue(ref(db, '/login'), usersList => {
-            for(let i = 0; i < usersList.val().length; i++) {
-                const current = usersList.val()[i]
-                if (current && current.username == credentials.username && current.password == credentials.password) {
+        get(ref(db, '/user')).then(usersList => {
+            usersList.forEach((user) => {
+                if (user && user.val().email == credentials.username && user.val().password == credentials.password) {
                     Principal()
                 }
-            }
+            })
         })
     }
     return (

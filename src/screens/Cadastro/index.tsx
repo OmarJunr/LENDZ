@@ -20,6 +20,8 @@ import { InputsNumeric } from "../../components/InputsNumeric";
 import { InputsPassword } from "../../components/InputsPassword";
 import { InputsText } from "../../components/InputsText";
 import { Lines } from "../../components/Lines";
+import { get, onValue, ref, update } from "firebase/database";
+import db from "../../database/database";
 
 export function Cadastro() {
     const navigation = useNavigation()
@@ -29,8 +31,52 @@ export function Cadastro() {
        navigation.navigate("SignIn");
    }
 
-    return (
+   function Principal() {
+    //@ts-ignore
+    navigation.navigate("Principal");
+}
 
+   const [nome, setNome] = useState('')
+   const [email, setEmail] = useState('')
+   const [phone, setPhone] = useState('')
+   const [password, setPassword] = useState('')
+   const [confirmPassword, setConfirmPassword] = useState('')
+
+function validateSignUp() {
+       if (nome.length > 0 &&
+            email.length > 0 &&
+            phone.length > 0 &&
+            password.length > 0 &&
+            confirmPassword.length > 0 &&
+            password == confirmPassword) {
+                get(ref(db, '/user')).then(users => {
+                    console.log(users)
+                    let highestId = "0"
+                    let can = true
+                    users.forEach((usera) => {
+                        const user = usera.val()
+                        if (parseInt(usera.key) >= parseInt(highestId)) {
+                            highestId = (parseInt(usera.key) + 1).toString()
+                        }
+                        if (user && user.email == email) {
+                            can = false
+                            return
+                        }
+                    })  
+                    if (!can) return
+                    update(ref(db, '/user/'+highestId), {
+                        name: nome,
+                        email: email,
+                        phone: phone,
+                        password: password
+                    })
+                    //@ts-ignore
+                    navigation.navigate("Principal");  
+                })
+            }
+   }
+
+    return (
         <Background>
             <ScrollView style={styles.container}>
 
@@ -56,13 +102,14 @@ export function Cadastro() {
                         <Lines />
                     </View>
 
-                    <InputsText title="Nome Completo" placeholder="Digite Seu Nome Aqui" />
-                    <InputsEmail title="E-mail" placeholder="Digite Seu E-mail Aqui" />
-                    <InputsNumeric title="Celular" placeholder="Digite Seu Celular Aqui" />
-                    <InputsPassword title="Senha" placeholder="Senha" />
-                    <InputsPassword title="Confirme sua Senha" placeholder="Confirme sua Senha" />
+                    <InputsText title="Nome Completo" placeholder="Digite Seu Nome Aqui" setText={setNome}/>
+                    <InputsEmail title="E-mail" placeholder="Digite Seu E-mail Aqui" setEmail={setEmail}/>
+                    <InputsNumeric title="Celular" placeholder="Digite Seu Celular Aqui" setNumber={setPhone}/>
+                    <InputsPassword title="Senha" placeholder="Senha" setText={setPassword}/>
+                    <InputsPassword title="Confirme sua Senha" placeholder="Confirme sua Senha" setText={setConfirmPassword}/>
                     <Button
                         title="Cadastre-se"
+                        onClick={validateSignUp}
                     />
                 </View>
 
