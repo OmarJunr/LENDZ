@@ -63,10 +63,11 @@ export function Carrinho() {
                                         <Text style={styles.disponivel}>Disponível: {product.quant}</Text>
                                         <View style={styles.qtdButtons}>
                                             <RectButton onPress={() => {
-                                                if((count - 1) == 0){
-                                                        removeItem(product);
-                                                        //HandleRefresh();
-                                                }else setCount(count -  1)} }>
+                                                if ((count - 1) == 0) {
+                                                    removeItem(product);
+                                                    // HandleRefresh();
+                                                } else setCount(count -  1)
+                                                }}>
                                                 <AntDesign
                                                     name="minuscircleo"
                                                     color={"grey"}
@@ -75,8 +76,9 @@ export function Carrinho() {
                                             </RectButton>
                                             <Text style={styles.quantity}>{count}</Text>
                                             <RectButton onPress={() => {
-                                                if((count + 1) > product.quant){
-                                                }else setCount(count +  1)} }>
+                                                if ((count + 1) > product.quant) {
+                                                } else setCount(count +  1)
+                                                }}>
                                                 <AntDesign
                                                     name="pluscircleo"
                                                     color={"grey"}

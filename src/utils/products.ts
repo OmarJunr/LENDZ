@@ -16,6 +16,6 @@ export function addItem(item){
 };
 
 export function removeItem(item){
-    let remover = products.indexOf(item);
-    products.splice(remover, 1);
+    let toBeRemoved = products.indexOf(item);
+    products.splice(toBeRemoved, 1);
 }

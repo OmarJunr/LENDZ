@@ -21,6 +21,14 @@ export const styles = StyleSheet.create({
         marginHorizontal: 25,
     },
 
+    vazio: {
+        color: 'grey',
+        fontSize: 50,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        marginVertical: '35%',
+    },
+
     title: {
         flex: 1,
         color: theme.colors.white,
