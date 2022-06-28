@@ -20,6 +20,7 @@ export function CategorySelect({ categorySelected, setCategory}: Props) {
     const [products, setProducts] = useState(null)
 
     async function fetch() {
+        if (!products)
         get(ref(db, '/products')).then((rproducts) => {
             if (rproducts && rproducts.val()) {
                 setProducts(rproducts.val())
@@ -29,11 +30,9 @@ export function CategorySelect({ categorySelected, setCategory}: Props) {
         })
     }
 
-    useEffect(() => {
-        fetch()
-    })
 
     return (
+    fetch(),
         <>
             <ScrollView
                 horizontal

@@ -21,6 +21,7 @@ export function RequestSelect({ requestSelected, setRequest }: Props) {
     const [products, setProducts] = useState(null)
 
     async function fetch() {
+        if(!products)
         get(ref(db, '/products')).then((rproducts) => {
             if (rproducts && rproducts.val()) {
                 setProducts(rproducts.val())

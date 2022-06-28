@@ -24,6 +24,7 @@ import db from "../../database/database";
 import { getKey } from "../../utils/saveId";
 import { fila, filaAddItem } from "../../utils/fila";
 
+
 export function Fila() {
     const [products, setProducts] = useState(null)
 
@@ -42,9 +43,9 @@ export function Fila() {
     //     })
     // }
 
-    async function getSolicitadosList() {
+     function getSolicitadosList() {
+        if(!products)
         get(ref(db, '/solicitacao/' + getKey() + '/solicitacao_id/')).then((rproducts) => {
-            console.log(rproducts.val())
             if (rproducts && rproducts.val()) {
                 setProducts(rproducts.val())
             } else {
@@ -53,12 +54,8 @@ export function Fila() {
         })
     }
 
-    useEffect(() => {
-        getSolicitadosList()
-    })
-
-
     return (
+        getSolicitadosList(),
         <Background>
             <View style={styles.container}>
                 <View style={styles.screen}>
