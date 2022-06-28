@@ -6,6 +6,7 @@ import map from "../../../assets/localretirada/local_retirada_maps.png"
 import { AntDesign } from '@expo/vector-icons'
 import { useNavigation } from "@react-navigation/native"
 import { RectButton } from "react-native-gesture-handler"
+import MapView from 'react-native-maps'
 
 export function LocalRetirada() {
     const navigation = useNavigation()
@@ -27,14 +28,24 @@ export function LocalRetirada() {
             </View>
             <View style={styles.middle_container}>
                 <Text style={styles.title}>Sala da Coordenação</Text>
-                <View style={{marginVertical:10}}>
-                <Text style={styles.subtitle}>Estr. p/ Boa Esperança, km 04 - Zona Rural</Text>
-                <Text style={styles.subtitle}>Dois Vizinhos - PR, 85660-000</Text>
-                <Text style={styles.subtitle}>Bloco 1 - Sala 1</Text>
+                <View style={{ marginVertical: 10 }}>
+                    <Text style={styles.subtitle}>Estr. p/ Boa Esperança, km 04 - Zona Rural</Text>
+                    <Text style={styles.subtitle}>Dois Vizinhos - PR, 85660-000</Text>
+                    <Text style={styles.subtitle}>Bloco 1 - Sala 1</Text>
                 </View>
-                <Image
-                    style={styles.image}
-                    source={map} />
+                <View style={styles.mapContainer}>
+                    <MapView
+                        style={styles.map}
+                        loadingEnabled={true}
+                        region={{
+                            latitude: -25.704248913420635,
+                            longitude: -53.098057682292556,
+                            latitudeDelta: 0.01,
+                            longitudeDelta: 0.01,
+                        }}
+                    >
+                    </MapView>
+                </View>
 
             </View>
             <View style={styles.bottom_container}>

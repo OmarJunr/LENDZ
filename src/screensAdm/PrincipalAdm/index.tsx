@@ -20,7 +20,7 @@ export function PrincipalAdm() {
 
                 <View style={styles.screen}>
 
-                    <ButtonDirection title="Produtos" local="Produtos" height="" width="" />
+                    <ButtonDirection title="Produtos" local="ProductsAdm" height="" width="" />
                     <ButtonDirection title="Solicitações Pendetes" local="SolicitacaoPendetes" height="" width="" />
                     <ButtonDirection title="Gerenciar Estoque" local="GerenciarEstoque" height="" width="" />
                     <ButtonDirection title="Chat Com Aluno" local="SuporteAlunos" height="" width="" />
