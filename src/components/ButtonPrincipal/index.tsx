@@ -7,6 +7,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { theme } from "../../global/styles/theme";
 import db from "../../database/database"
 import { get, onValue, ref, update } from "firebase/database";
+import { setKey } from "../../utils/saveId";
 
 export function ButtonPrincipal({getCredentials}) {
     const navigation = useNavigation()
@@ -23,6 +24,7 @@ export function ButtonPrincipal({getCredentials}) {
                 if (user && user.val().email == credentials.username && user.val().password == credentials.password) {
                     Principal()
                 }
+                setKey(user.key)
             })
         })
     }

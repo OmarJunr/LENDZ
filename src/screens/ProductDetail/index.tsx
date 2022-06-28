@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { View, Text, Image, Pressable } from "react-native"
+import { View, Text, Image, Pressable, Alert } from "react-native"
 import { RectButton } from "react-native-gesture-handler"
 import { SafeAreaView } from "react-native-safe-area-context"
 import { styles } from "./styles"
@@ -7,12 +7,12 @@ import { AntDesign } from '@expo/vector-icons'
 import { useNavigation } from "@react-navigation/native"
 import { Itens } from "../../components/Itens"
 import { Background } from "../../components/Background"
+import { addItem, isRepeated, products } from "../../utils/products"
 
 export function ProductDetail({ route }) {
     const navigation = useNavigation()
     const data = route.params.paramKey;
     const [bool, setbool] = useState(true)
-
 
     return (
         <Background>
@@ -78,7 +78,15 @@ export function ProductDetail({ route }) {
                                     <AntDesign style={styles.button_icon} name="pluscircleo" />
                                 </RectButton>
                             </View>
-                            <RectButton style={styles.add_button}>
+                            <RectButton style={styles.add_button} onPress={ () => {
+                            if (data.quant <= 0 && !isRepeated(data)) {
+                                Alert.alert('Erro: O Item selecionado está indisponível.')
+                            } else if (isRepeated(data)) {
+                                Alert.alert('Erro: O item selecionado já está no seu carrinho.')
+                            } else {
+                                addItem(data)
+                            }
+                            } }>
                                 <Text style={styles.add_text}>ADICIONAR</Text>
                                 <AntDesign name="shoppingcart" style={styles.shop_button} />
                             </RectButton>

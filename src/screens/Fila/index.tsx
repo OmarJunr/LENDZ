@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import {
     View, Text, ScrollView, KeyboardAvoidingView, Platform, Image
@@ -19,8 +19,13 @@ import { ButtonVsu } from "../../components/ButtonVsu";
 import { Background } from '../../components/Background';
 import foto1 from '../../assets/assets/hdexterno.png'
 import { Itens } from "../../components/Itens";
+import { get, ref } from "firebase/database";
+import db from "../../database/database";
+import { getKey } from "../../utils/saveId";
+import { fila, filaAddItem } from "../../utils/fila";
 
 export function Fila() {
+    const [products, setProducts] = useState(null)
 
     const navigation = useNavigation()
 
@@ -28,6 +33,29 @@ export function Fila() {
         //@ts-ignore
         navigation.navigate("Principal");
     }
+
+    // async function getSolicitadosList() {
+    //     get(ref(db, '/solicitacao/' + getKey() + '/solicitacao_id/')).then(productList => {
+    //         productList.forEach((product) => {
+    //             filaAddItem(product)
+    //         })
+    //     })
+    // }
+
+    async function getSolicitadosList() {
+        get(ref(db, '/solicitacao/' + getKey() + '/solicitacao_id/')).then((rproducts) => {
+            if (rproducts && rproducts.val()) {
+                setProducts(rproducts.val())
+            } else {
+                setProducts([])
+            }
+        })
+    }
+
+    useEffect(() => {
+        getSolicitadosList()
+    })
+
 
     return (
         <Background>
@@ -42,39 +70,45 @@ export function Fila() {
                         />
                         <Text style={styles.title}>Fila de Empréstimos</Text>
                     </View>
-                    <View style={styles.imageContainer}>
-                        <Image
-                            source={foto1}
-                            style={styles.image}
-                        />
-                    </View>
-                    <View style={styles.itemInfo}>
-                        <Text style={styles.font}>HD Externo</Text>
-                        <Text style={styles.disponivel}>Na fila de Empréstimo</Text>
-                        <View style={styles.qtdButtons}>
-                            <RectButton>
-                                <AntDesign
-                                    name="minuscircleo"
-                                    color={"grey"}
-                                    size={20}
-                                />
-                            </RectButton>
-                            <Text style={styles.quantity}>2</Text>
-                            <RectButton>
-                                <AntDesign
-                                    name="pluscircleo"
-                                    color={"grey"}
-                                    size={20}
-                                />
-                            </RectButton>
-                        </View>
-                    </View>
-                    <View style={styles.rodape}>
-                        <Text style={styles.textRodape}>ITENS NA FILA</Text>
-                        <Text style={styles.textRodapeQtd}>2</Text>
-                    </View>
+                    <ScrollView>
+                        {
+                            products && products.map((product) => (
+                                <View>
+                                    <View style={styles.imageContainer}>
+                                        <Image
+                                            source={{ uri: product.icon }}
+                                            style={styles.image}
+                                        />
+                                    </View>
+                                    <View style={styles.itemInfo}>
+                                        <Text style={styles.font}>{product.title}</Text>
+                                        <Text style={styles.disponivel}>Unidades solicitadas:</Text>
+                                        <Text style={styles.quantity}>{product.quant}</Text>
+                                    </View>
+                                </View>
+                            ))
+                        }
+
+                        {/* {fila.map((product) => {
+                            return (
+                                <View>
+                                    <View style={styles.imageContainer}>
+                                        <Image
+                                            source={{uri: product.icon}}
+                                            style={styles.image}
+                                        />
+                                    </View>
+                                    <View style={styles.itemInfo}>
+                                        <Text style={styles.font}>{product.title}</Text>
+                                        <Text style={styles.disponivel}>Unidades solicitadas:</Text>
+                                        <Text style={styles.quantity}>{product.quant}</Text>
+                                    </View>
+                                </View>
+                            );
+                        })} */}
+                    </ScrollView>
                 </View>
-                <Itens IconSelected="Fila"/>
+                <Itens IconSelected="Fila" />
             </View>
         </Background>
     );

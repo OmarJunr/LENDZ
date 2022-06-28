@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
     },
     image:{
         width: 120,
-        height: 80,
+        height: 120,
 
     },
     itemInfo:{
@@ -72,7 +72,7 @@ export const styles = StyleSheet.create({
         marginHorizontal: 80,
     },
     rodape: {
-        marginVertical: 100,
+        marginVertical: 0,
         flexDirection: 'column',
         alignItems: 'center',
     },
