@@ -20,11 +20,6 @@ import { ButtonPrincipal } from "../../components/ButtonPrincipal";
 export function Login() {
     const navigation = useNavigation()
    
-    function handlePrincipalAdm() {
-        //@ts-ignore
-        navigation.navigate("PrincipalAdm");
-    }
-    
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
@@ -60,11 +55,6 @@ export function Login() {
 
                         <InputsText title="Usuario" placeholder="Digite Seu usuario" setText={setUsername} />
                         <InputsPassword title="Senha" placeholder="Digite Sua Senha" setText={setPassword}/>
-                        <Pressable onPress={handlePrincipalAdm}>
-                            <Text>
-                                Adm
-                            </Text>
-                        </Pressable>
                         <ButtonPrincipal getCredentials={() => {
                             return {
                                 username: username,
