@@ -22,8 +22,8 @@ export function ButtonCarrinho() {
 
     function handleSolicitar() {
         if (products.length > 0) {
-                update(ref(db, '/solicitacao/' + getKey() + '/solicitacao_id/'), {
-                    produtos: products
+                update(ref(db, '/solicitacao/' + getKey()), {
+                    solicitacao_id: products
                 })
                 // update(ref(db, '/products/'), {
                     //alterarquantidade

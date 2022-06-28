@@ -44,6 +44,7 @@ export function Fila() {
 
     async function getSolicitadosList() {
         get(ref(db, '/solicitacao/' + getKey() + '/solicitacao_id/')).then((rproducts) => {
+            console.log(rproducts.val())
             if (rproducts && rproducts.val()) {
                 setProducts(rproducts.val())
             } else {
@@ -88,24 +89,6 @@ export function Fila() {
                                 </View>
                             ))
                         }
-
-                        {/* {fila.map((product) => {
-                            return (
-                                <View>
-                                    <View style={styles.imageContainer}>
-                                        <Image
-                                            source={{uri: product.icon}}
-                                            style={styles.image}
-                                        />
-                                    </View>
-                                    <View style={styles.itemInfo}>
-                                        <Text style={styles.font}>{product.title}</Text>
-                                        <Text style={styles.disponivel}>Unidades solicitadas:</Text>
-                                        <Text style={styles.quantity}>{product.quant}</Text>
-                                    </View>
-                                </View>
-                            );
-                        })} */}
                     </ScrollView>
                 </View>
                 <Itens IconSelected="Fila" />
