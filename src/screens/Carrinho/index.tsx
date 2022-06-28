@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import {
-    View, Text, ScrollView, KeyboardAvoidingView, Platform, Image, ImageBackground
+    View, Text, ScrollView, KeyboardAvoidingView, Platform, Image, ImageBackground, Alert
 } from 'react-native';
 
 import { RectButton } from "react-native-gesture-handler";
@@ -50,7 +50,9 @@ export function Carrinho() {
                     <ScrollView>
                         {products.map((product) => {
                             const [count, setCount] = useState(1);
+                            product.quantSelecionada = count;
                             return (
+                                //console.log(products),
                                 <View>
                                     <View style={styles.imageContainer}>
                                         <Image
@@ -66,7 +68,11 @@ export function Carrinho() {
                                                 if ((count - 1) == 0) {
                                                     removeItem(product);
                                                     // HandleRefresh();
-                                                } else setCount(count -  1)
+                                                } else{
+                                                    setCount(count -  1);
+                                                    product.quantSelecionada--;
+                                                    //console.log(product);
+                                                }
                                                 }}>
                                                 <AntDesign
                                                     name="minuscircleo"
@@ -77,7 +83,11 @@ export function Carrinho() {
                                             <Text style={styles.quantity}>{count}</Text>
                                             <RectButton onPress={() => {
                                                 if ((count + 1) > product.quant) {
-                                                } else setCount(count +  1)
+                                                } else{
+                                                    setCount(count +  1);
+                                                    product.quantSelecionada++;
+                                                    //console.log(product);
+                                                }
                                                 }}>
                                                 <AntDesign
                                                     name="pluscircleo"

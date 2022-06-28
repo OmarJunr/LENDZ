@@ -38,10 +38,10 @@ export function LocalRetirada() {
 
             </View>
             <View style={styles.bottom_container}>
-                <Text style={styles.local_retirada_text}>ITENS EM POSSE</Text>
+                {/* <Text style={styles.local_retirada_text}>ITENS EM POSSE</Text>
                 <Text style={styles.number}>
                     2
-                </Text>
+                </Text> */}
                 <Pressable style={styles.voltar} onPress={handlePrincipal}>
                     <Text style={styles.voltarText}>
                         VOLTAR PARA TELA PRINCIPAL

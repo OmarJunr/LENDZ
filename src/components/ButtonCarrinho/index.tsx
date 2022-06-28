@@ -8,45 +8,31 @@ import { theme } from "../../global/styles/theme";
 import db from "../../database/database";
 import { get, off, onValue, ref, update } from "firebase/database";
 import { products } from "../../utils/products";
+import { getKey } from "../../utils/saveId";
 
-
-function validateSolicitados() {
-    if (products.length > 0) {
-        get(ref(db, '/user')).then(users => {
-            console.log(users)
-            let highestId = "0"
-            let can = true
-            users.forEach((usera) => {
-                const user = usera.val()
-                if (parseInt(usera.key) >= parseInt(highestId)) {
-                    highestId = (parseInt(usera.key) + 1).toString()
-                }
-                if (user && user.email == email) {
-                    can = false
-                    return
-                }
-            })
-            if (!can) return
-            update(ref(db, '/user/' + highestId), {
-                name: nome,
-                email: email,
-                phone: phone,
-                password: password
-            })
-            //@ts-ignore
-            navigation.navigate("Principal");
-        })
-    }
-}
 
 export function ButtonCarrinho() {
 
     const navigation = useNavigation()
 
+    // function handleSolicitar() {
+    //         //@ts-ignore
+    //         navigation.navigate("Solicitacao");
+    // }
+
     function handleSolicitar() {
-            //@ts-ignore
-            navigation.navigate("Solicitacao");
-    }
+        if (products.length > 0) {
+                update(ref(db, '/solicitacao/' + getKey() + '/solicitacao_id/'), {
+                    produtos: products
+                })
+                // update(ref(db, '/products/'), {
+                    //alterarquantidade
+                // })
+
+                //@ts-ignore
+                navigation.navigate("Solicitacao");
+            }
+        }
 
     if (products.length <= 0){
         return (

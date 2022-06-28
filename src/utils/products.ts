@@ -1,14 +1,13 @@
 export const products = [];
 
-// export function addItem(item){
-//     let indexar = products.indexOf(item);
-//     if(indexar != -1){
-//         products[indexar].quant += 1;
-//     }else{
-//         products.push(item);
-//     }
-//     console.log(products)
-// };
+export function isRepeated(item){
+    let findIndex = products.indexOf(item);
+    if(findIndex > -1){
+        return true;
+    }else{
+        return false;
+    }
+};
 
 export function addItem(item){
     products.push(item)
