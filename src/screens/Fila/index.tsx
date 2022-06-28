@@ -81,7 +81,7 @@ export function Fila() {
                                     <View style={styles.itemInfo}>
                                         <Text style={styles.font}>{product.title}</Text>
                                         <Text style={styles.disponivel}>Unidades solicitadas:</Text>
-                                        <Text style={styles.quantity}>{product.quant}</Text>
+                                        <Text style={styles.quantity}>{product.quantSelecionada}</Text>
                                     </View>
                                 </View>
                             ))
